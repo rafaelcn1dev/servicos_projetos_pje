@@ -48,4 +48,4 @@ Esse script será responsável por inicializar os projetos correspondentes aos s
 * **Gateway**
 * **JCR**
 
-Após a execução, os serviços estarão disponíveis para utilização no ambiente de desenvolvimento local.
+Após a execução, os serviços estarão disponíveis para utilização no ambiente de desenvolvimento local. Observação, necessário o Podman está instalado no computador
