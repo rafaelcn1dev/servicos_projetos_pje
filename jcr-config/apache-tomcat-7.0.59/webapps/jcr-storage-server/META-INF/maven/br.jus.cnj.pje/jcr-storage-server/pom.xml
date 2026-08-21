@@ -1,0 +1,91 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>jcr-storage-server</artifactId>
+	<name>Pje JCR Storage Server</name>
+	<description>Servidor JCR para armazenamento de documentos no PJe</description>
+	<packaging>war</packaging>
+
+	<parent>
+		<groupId>br.jus.cnj.pje</groupId>
+		<artifactId>jcr-storage</artifactId>
+		<version>1.2.3-SNAPSHOT</version>
+	</parent>
+
+	<properties>
+		<application.host>localhost</application.host>
+		<application.port>9000</application.port>
+		<application.contextpath>/storage</application.contextpath>
+	</properties>
+
+	<dependencies>
+		<!-- JCR Common -->
+		<dependency>
+			<groupId>br.jus.cnj.pje</groupId>
+			<artifactId>jcr-storage-common</artifactId>
+		</dependency>
+
+		<!-- The JCR API -->
+		<dependency>
+			<groupId>javax.jcr</groupId>
+			<artifactId>jcr</artifactId>
+		</dependency>
+
+		<!-- Jackrabbit content repository -->
+		<dependency>
+			<groupId>org.apache.jackrabbit</groupId>
+			<artifactId>jackrabbit-core</artifactId>
+		</dependency>
+
+		<!-- Spring MVC -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+		</dependency>
+
+		<!-- Servlet API -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>jcr-storage-server</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.1</version>
+				<configuration>
+					<port>${application.port}</port>
+					<path>${application.contextpath}</path>
+					<useTestClasspath>false</useTestClasspath>
+				</configuration>
+				<executions>
+					<execution>
+						<id>tomcat-run</id>
+						<goals>
+							<goal>exec-war-only</goal>
+						</goals>
+						<phase>package</phase>
+						<configuration>
+							<finalName>${project.build.finalName}-exec.jar</finalName>
+							<path>${application.contextpath}</path>
+							<useTestClasspath>false</useTestClasspath>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

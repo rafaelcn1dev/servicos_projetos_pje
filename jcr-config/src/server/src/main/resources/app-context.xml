@@ -1,0 +1,58 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<!-- **************************************************************** -->
+	<!-- SPRING ANNOTATION PROCESSING -->
+	<!-- **************************************************************** -->
+	<context:component-scan base-package="br.jus.cnj.pje.storage.jcr">
+		<context:exclude-filter type="regex" expression="br/jus/cnj/pje/storage/jcr/server/.*"/>
+	</context:component-scan>
+	
+	<!-- **************************************************************** -->
+	<!-- SPRING PROPERTIES -->
+	<!-- **************************************************************** -->
+	<context:property-placeholder location="file:${br.jus.cnj.jcr.serverProperties}" 
+	ignore-resource-not-found="true" ignore-unresolvable="true" order="0"/>
+	
+	<context:property-placeholder location=" classpath:/server.properties" 
+	ignore-resource-not-found="true" ignore-unresolvable="true" order="1"/>
+	
+	<!-- **************************************************************** -->
+	<!-- JCR REPOSITORY -->
+	<!-- **************************************************************** -->
+    <bean id="config" class="org.apache.jackrabbit.core.config.RepositoryConfig" factory-method="install">
+        <constructor-arg type="java.io.File">
+        	<bean class="java.io.File">
+        		<constructor-arg value="${jcr.server.repoDir}"/>
+        	</bean>
+        </constructor-arg>
+    </bean>
+    
+    <bean id="repository" class="org.apache.jackrabbit.core.RepositoryImpl">
+        <constructor-arg ref="config" />
+    </bean>
+    
+    <bean id="dataPathBuilder" class="br.jus.cnj.pje.storage.jcr.server.DatePathBuilder">
+    	<constructor-arg value="${jcr.server.maxFiles}" />
+    </bean>
+    
+    <bean id="storageService" class="br.jus.cnj.pje.storage.jcr.server.StorageService">
+    	<constructor-arg ref="dataPathBuilder" />
+    	<constructor-arg value="${jcr.server.tempDir}"/>
+    </bean>
+    
+    <bean id="initializer" class="br.jus.cnj.pje.storage.jcr.server.support.JCRSessionInitializer">
+    	<constructor-arg ref="repository"/>
+    	<constructor-arg value="admin"/>
+    	<constructor-arg value="admin"/>
+    </bean>
+</beans>
+
+
+

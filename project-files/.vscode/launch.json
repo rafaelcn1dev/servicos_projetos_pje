@@ -1,0 +1,43 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "PJe Debug 1G",
+      "request": "attach",
+      "hostName": "localhost",
+      "port": 8787,
+      "projectName": "pje-web",
+      "timeout": 180000,
+      "preLaunchTask": "Start JBoss 1G"
+    },
+    {
+      "type": "java",
+      "name": "PJe Debug 2G",
+      "request": "attach",
+      "hostName": "localhost",
+      "port": 8888,
+      "projectName": "pje-web",
+      "timeout": 180000,
+      "preLaunchTask": "Start JBoss 2G"
+    },
+    {
+      "type": "java",
+      "name": "Producao AWS 1g",
+      "request": "attach",
+      "hostName": "localhost",
+      "port": 8787,
+      "projectName": "pje-web",
+      "timeout": 60000
+    },
+    {
+      "type": "java",
+      "name": "Producao AWS 2g",
+      "request": "attach",
+      "hostName": "localhost",
+      "port": 8888,
+      "projectName": "pje-web",
+      "timeout": 60000
+    }    
+  ]
+}

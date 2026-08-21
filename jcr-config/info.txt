@@ -1,0 +1,18 @@
+jboss/bin/run.conf
+ adicionar na chamada java:
+  -Dbr.jus.cnj.pje.jcr-storage.configuration=d:/pje/dk/jcr/jcr-storage.properties"
+jcr-storage.properties
+ url
+jcr-storage-server.war\WEB-INF\classes\server.properties
+ configurar pasta do reposit�rio
+tomcat/conf/server.xml
+ utilizar porta da url 
+ 
+
+
+ dir /s /b C:\devTJPE\servicos\jcr\server.properties
+
+dir /s /b C:\devTJPE\servicos\jcr\*\server.xml
+
+ 
+

@@ -1,0 +1,233 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.jus.cnj.pje</groupId>
+	<artifactId>jcr-storage</artifactId>
+	<version>1.2.2</version>
+	<name>Pje Storage</name>
+	<packaging>pom</packaging>
+	<description>Interface de armazenamento de documentos no PJe</description>
+
+	<properties>
+		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
+		<jackrabbit.version>2.6.0</jackrabbit.version>
+		<spring.version>3.2.3.RELEASE</spring.version>
+		<thymeleaf.version>2.0.16</thymeleaf.version>
+		<jcr.client.url>http://localhost:9000/storage/documents</jcr.client.url>
+		<jcr.client.username>admin</jcr.client.username>
+		<jcr.client.password>admin</jcr.client.password>
+		<jcr.chunk-size>1048576</jcr.chunk-size>
+		<jcr.client.max-connections>100</jcr.client.max-connections>
+		<jcr.client.test.url>http://localhost:9000/storage/documents</jcr.client.test.url>
+		<jcr.client.test.username>admin</jcr.client.test.username>
+		<jcr.client.test.password>admin</jcr.client.test.password>
+		<jcr.test.chunk-size>1048576</jcr.test.chunk-size>
+		<jcr.client.test.max-connections>100</jcr.client.test.max-connections>
+		<log.root>INFO,stdout</log.root>
+	</properties>
+
+	<modules>
+		<module>common</module>
+		<module>client</module>
+		<module>server</module>
+	</modules>
+	<scm>
+		<url>git@git.cnj.jus.br:utilitarios/jcr-storage.git</url>
+		<developerConnection>scm:git:git@git.cnj.jus.br:utilitarios/jcr-storage.git</developerConnection>
+		<tag>git-cnj</tag>
+	</scm>
+	<distributionManagement>
+		<repository>
+			<id>cnj-central</id>
+			<url>http://www.cnj.jus.br/artifactory/libs-releases-local</url>
+		</repository>
+	</distributionManagement>
+	<dependencyManagement>
+		<dependencies>
+			<!-- PJE Interfaces -->
+			<dependency>
+				<groupId>br.jus.cnj.pje</groupId>
+				<artifactId>pje-interfaces</artifactId>
+				<version>1.0.8</version>
+			</dependency>
+			
+			<!-- JCR Storage Common -->
+			<dependency>
+	            <groupId>br.jus.cnj.pje</groupId>
+	            <artifactId>jcr-storage-common</artifactId>
+	            <version>${project.version}</version>
+        	</dependency>
+        
+			<!-- The JCR API -->
+			<dependency>
+				<groupId>javax.jcr</groupId>
+				<artifactId>jcr</artifactId>
+				<version>2.0</version>
+			</dependency>
+
+			<!-- Jackrabbit content repository -->
+			<dependency>
+				<groupId>org.apache.jackrabbit</groupId>
+				<artifactId>jackrabbit-core</artifactId>
+				<version>${jackrabbit.version}</version>
+			</dependency>
+
+			<!-- Servlet API -->
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>servlet-api</artifactId>
+				<version>2.5</version>
+				<scope>provided</scope>
+			</dependency>
+			            
+            <!-- Spring 3 dependencies -->
+    		<dependency>
+    			<groupId>org.springframework</groupId>
+    			<artifactId>spring-core</artifactId>
+    			<version>${spring.version}</version>
+    		</dependency>
+
+    		<dependency>
+    			<groupId>org.springframework</groupId>
+    			<artifactId>spring-web</artifactId>
+    			<version>${spring.version}</version>
+    		</dependency>
+
+    		<dependency>
+    			<groupId>org.springframework</groupId>
+    			<artifactId>spring-webmvc</artifactId>
+    			<version>${spring.version}</version>
+    		</dependency>
+    		
+    		<!-- Thymeleaf -->
+    		<dependency>
+            	<groupId>org.thymeleaf</groupId>
+            	<artifactId>thymeleaf</artifactId>
+            	<version>${thymeleaf.version}</version>
+            </dependency>
+            
+            <dependency>
+            	<groupId>org.thymeleaf</groupId>
+            	<artifactId>thymeleaf-spring3</artifactId>
+            	<version>${thymeleaf.version}</version>
+            </dependency>
+            
+			<!-- seam -->
+			<dependency>
+				<groupId>org.jboss.seam</groupId>
+				<artifactId>jboss-seam</artifactId>
+				<version>2.2.2.Final</version>
+				<scope>provided</scope>
+				<type>jar</type>
+				<exclusions>
+					<exclusion>
+						<artifactId>el-api</artifactId>
+						<groupId>javax.el</groupId>
+					</exclusion>
+					<exclusion>
+						<artifactId>xstream</artifactId>
+						<groupId>com.thoughtworks.xstream</groupId>
+					</exclusion>
+					<exclusion>
+						<artifactId>xpp3_min</artifactId>
+						<groupId>xpp3</groupId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<!-- Commons -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>1.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.1</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>commons-httpclient</groupId>
+			<artifactId>commons-httpclient</artifactId>
+			<version>3.1</version>
+		</dependency>
+		
+		<!-- Use Log4J for logging -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.6.6</version>
+		</dependency>
+
+		<!-- Test -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.10</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>${basedir}/src/main/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>**/*.properties</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>${basedir}/src/main/resources</directory>
+				<filtering>false</filtering>
+			</resource>
+		</resources>
+		<testResources>
+			<testResource>
+				<directory>${basedir}/src/test/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>**/*.properties</include>
+				</includes>
+			</testResource>
+			<testResource>
+				<directory>${basedir}/src/test/resources</directory>
+				<filtering>false</filtering>
+			</testResource>
+		</testResources>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<repositories>
+		<repository>
+			<id>jboss</id>
+			<url>https://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+</project>

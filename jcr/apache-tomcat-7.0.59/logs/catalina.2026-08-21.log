@@ -1,0 +1,80 @@
+ago 21, 2026 2:17:48 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMA합ES: Server version:        Apache Tomcat/7.0.59
+ago 21, 2026 2:17:48 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMA합ES: Server built:          Jan 28 2015 15:51:10 UTC
+ago 21, 2026 2:17:48 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMA합ES: Server number:         7.0.59.0
+ago 21, 2026 2:17:48 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMA합ES: OS Name:               Windows 10
+ago 21, 2026 2:17:48 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMA합ES: OS Version:            10.0
+ago 21, 2026 2:17:48 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMA합ES: Architecture:          amd64
+ago 21, 2026 2:17:48 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMA합ES: Java Home:             C:\devTJPE\servicos\java\jdk8u232-b09\jre
+ago 21, 2026 2:17:48 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMA합ES: JVM Version:           1.8.0_232-b09
+ago 21, 2026 2:17:48 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMA합ES: JVM Vendor:            
+ago 21, 2026 2:17:48 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMA합ES: CATALINA_BASE:         C:\Users\rafacTJ\Downloads\Nova pasta (2)\jcr\apache-tomcat-7.0.59
+ago 21, 2026 2:17:48 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMA합ES: CATALINA_HOME:         C:\Users\rafacTJ\Downloads\Nova pasta (2)\jcr\apache-tomcat-7.0.59
+ago 21, 2026 2:17:48 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMA합ES: Command line argument: -Djava.util.logging.config.file=C:\Users\rafacTJ\Downloads\Nova pasta (2)\jcr\apache-tomcat-7.0.59\conf\logging.properties
+ago 21, 2026 2:17:48 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMA합ES: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+ago 21, 2026 2:17:48 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMA합ES: Command line argument: -Dbr.jus.cnj.jcr.serverProperties=C:\devTJPE\servicos\jcr\server.properties
+ago 21, 2026 2:17:48 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMA합ES: Command line argument: -Djava.endorsed.dirs=C:\Users\rafacTJ\Downloads\Nova pasta (2)\jcr\apache-tomcat-7.0.59\endorsed
+ago 21, 2026 2:17:48 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMA합ES: Command line argument: -Dcatalina.base=C:\Users\rafacTJ\Downloads\Nova pasta (2)\jcr\apache-tomcat-7.0.59
+ago 21, 2026 2:17:48 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMA합ES: Command line argument: -Dcatalina.home=C:\Users\rafacTJ\Downloads\Nova pasta (2)\jcr\apache-tomcat-7.0.59
+ago 21, 2026 2:17:48 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMA합ES: Command line argument: -Djava.io.tmpdir=C:\Users\rafacTJ\Downloads\Nova pasta (2)\jcr\apache-tomcat-7.0.59\temp
+ago 21, 2026 2:17:48 PM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+INFORMA합ES: Loaded APR based Apache Tomcat Native library 1.1.32 using APR version 1.5.1.
+ago 21, 2026 2:17:48 PM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+INFORMA합ES: APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+ago 21, 2026 2:17:49 PM org.apache.catalina.core.AprLifecycleListener initializeSSL
+INFORMA합ES: OpenSSL successfully initialized (OpenSSL 1.0.1j 15 Oct 2014)
+ago 21, 2026 2:17:49 PM org.apache.coyote.AbstractProtocol init
+INFORMA합ES: Initializing ProtocolHandler ["http-apr-7080"]
+ago 21, 2026 2:17:49 PM org.apache.coyote.AbstractProtocol init
+INFORMA합ES: Initializing ProtocolHandler ["ajp-apr-7009"]
+ago 21, 2026 2:17:49 PM org.apache.catalina.startup.Catalina load
+INFORMA합ES: Initialization processed in 1251 ms
+ago 21, 2026 2:17:49 PM org.apache.catalina.core.StandardService startInternal
+INFORMA합ES: Starting service Catalina
+ago 21, 2026 2:17:49 PM org.apache.catalina.core.StandardEngine startInternal
+INFORMA합ES: Starting Servlet Engine: Apache Tomcat/7.0.59
+ago 21, 2026 2:17:49 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMA합ES: Deploying web application directory C:\Users\rafacTJ\Downloads\Nova pasta (2)\jcr\apache-tomcat-7.0.59\webapps\docs
+ago 21, 2026 2:17:50 PM org.apache.catalina.util.SessionIdGeneratorBase createSecureRandom
+INFORMA합ES: Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [127] milliseconds.
+ago 21, 2026 2:17:50 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMA합ES: Deployment of web application directory C:\Users\rafacTJ\Downloads\Nova pasta (2)\jcr\apache-tomcat-7.0.59\webapps\docs has finished in 368 ms
+ago 21, 2026 2:17:50 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMA합ES: Deploying web application directory C:\Users\rafacTJ\Downloads\Nova pasta (2)\jcr\apache-tomcat-7.0.59\webapps\examples
+ago 21, 2026 2:17:50 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMA합ES: Deployment of web application directory C:\Users\rafacTJ\Downloads\Nova pasta (2)\jcr\apache-tomcat-7.0.59\webapps\examples has finished in 427 ms
+ago 21, 2026 2:17:50 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMA합ES: Deploying web application directory C:\Users\rafacTJ\Downloads\Nova pasta (2)\jcr\apache-tomcat-7.0.59\webapps\host-manager
+ago 21, 2026 2:17:50 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMA합ES: Deployment of web application directory C:\Users\rafacTJ\Downloads\Nova pasta (2)\jcr\apache-tomcat-7.0.59\webapps\host-manager has finished in 71 ms
+ago 21, 2026 2:17:50 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMA합ES: Deploying web application directory C:\Users\rafacTJ\Downloads\Nova pasta (2)\jcr\apache-tomcat-7.0.59\webapps\manager
+ago 21, 2026 2:17:50 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMA합ES: Deployment of web application directory C:\Users\rafacTJ\Downloads\Nova pasta (2)\jcr\apache-tomcat-7.0.59\webapps\manager has finished in 40 ms
+ago 21, 2026 2:17:50 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMA합ES: Deploying web application directory C:\Users\rafacTJ\Downloads\Nova pasta (2)\jcr\apache-tomcat-7.0.59\webapps\ROOT
+ago 21, 2026 2:17:50 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMA합ES: Deployment of web application directory C:\Users\rafacTJ\Downloads\Nova pasta (2)\jcr\apache-tomcat-7.0.59\webapps\ROOT has finished in 38 ms
+ago 21, 2026 2:17:50 PM org.apache.coyote.AbstractProtocol start
+INFORMA합ES: Starting ProtocolHandler ["http-apr-7080"]
+ago 21, 2026 2:17:50 PM org.apache.coyote.AbstractProtocol start
+INFORMA합ES: Starting ProtocolHandler ["ajp-apr-7009"]
+ago 21, 2026 2:17:50 PM org.apache.catalina.startup.Catalina start
+INFORMA합ES: Server startup in 992 ms

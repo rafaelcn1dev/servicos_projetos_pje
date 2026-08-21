@@ -1,0 +1,42 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>jcr-storage-client</artifactId>
+	<name>Pje JCR Storage Client</name>
+	<description>Cliente JCR para armazenamento de documentos no PJe</description>
+
+    <parent>
+		<groupId>br.jus.cnj.pje</groupId>
+		<artifactId>jcr-storage</artifactId>
+		<version>1.2.2</version>
+	</parent>
+	
+	<dependencies>
+		<!-- JCR Common -->
+        <dependency>
+            <groupId>br.jus.cnj.pje</groupId>
+            <artifactId>jcr-storage-common</artifactId>
+        </dependency>
+        
+		<!-- PJE Interfaces -->
+		<dependency>
+			<groupId>br.jus.cnj.pje</groupId>
+			<artifactId>pje-interfaces</artifactId>
+		</dependency>
+
+		<!-- The JCR API -->
+		<dependency>
+			<groupId>javax.jcr</groupId>
+			<artifactId>jcr</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.jboss.seam</groupId>
+			<artifactId>jboss-seam</artifactId>
+		</dependency>
+	</dependencies>
+</project>

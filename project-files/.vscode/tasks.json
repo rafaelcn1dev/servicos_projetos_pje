@@ -1,0 +1,117 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start JBoss 1G",
+      "type": "shell",
+      "command": "${workspaceFolder}/.vscode/start-dev.bat",
+      "isBackground": true,
+      "options": {
+        "env": {
+          "JBOSS_HOME": "${env:USERPROFILE}\\jboss-eap-7.0",
+          "JAVA_HOME": "${env:USERPROFILE}\\jdk8u232-b09",
+          "MAVEN_HOME": "${env:USERPROFILE}\\apache-maven-3.6.3",
+          "ENV_EUREKA_CLIENT_NONSECURE_PORT": "8080",
+          "ENV_PJE2_CLOUD_APP_NAME": "pje-tjpe-legacy-1g",
+          "ENV_PJE2_AUDITORIA_TIPO_PERSISTENCIA": "DB",
+          "ENV_PJE2_CLOUD_RABBIT_AUTORIDADES_CERTIFICADORAS_CONSUMER": "false",
+          "ENV_PJE2_CLOUD_RABBIT_CONNECTION_REQUIRED": "true",
+          "ENV_PJE2_CLOUD_RABBIT_EXCHANGENAME": "pje.legacy",
+          "ENV_PJE2_CLOUD_RABBIT_HOST": "localhost",
+          "ENV_PJE2_CLOUD_RABBIT_JOB_DJE_ENABLED": "false",
+          "ENV_PJE2_CLOUD_RABBIT_JOBS_CONSUMER": "false",
+          "ENV_PJE2_CLOUD_RABBIT_JOBS_PUBLISHER": "false",
+          "ENV_PJE2_CLOUD_RABBIT_PASSWORD": "guest",
+          "ENV_PJE2_CLOUD_RABBIT_PORT": "5672",
+          "ENV_PJE2_CLOUD_RABBIT_PUBLISH_MESSAGES": "false",
+          "ENV_PJE2_CLOUD_RABBIT_QUEUENAME": "pje.exchange",
+          "ENV_PJE2_CLOUD_RABBIT_USERNAME": "guest",
+          "ENV_PJE2_CLOUD_RABBIT_VIRTUALHOST": "/",
+          "ENV_PJE2_CLOUD_REGISTRA_COM_IP": "true",
+          "ENV_PJE2_CLOUD_REGISTRAR": "true",
+          "ENV_PJE2_CORS_ENABLED": "true",
+          "ENV_PJE_UPDATE_AUTORIDADES_CERTIFICADORAS_ONSTARTUP": "false",
+          "ENV_SSO_AUTHENTICATION_ENABLED": "false",
+          "ENV_SSO_AUTHORIZATION_ENABLED": "false",
+          "ENV_SSO_AUTHSERVER_URL": "https://sso.stg.cloud.pje.jus.br/auth",
+          "ENV_SSO_CLIENT_ID": "pje-tjpe-1g",
+          "ENV_SSO_CLIENT_SECRET": "b9bbd9b7-c832-4e8f-a2a7-e211a973b80b",
+          "ENV_SSO_CONFIDENTIAL_PORT": "443",
+          "ENV_SSO_REALM": "pje",
+          "ENV_SSO_SSL_REQUIRED": "ALL",
+          "ENV_SSO_URL": "https://sso.stg.cloud.pje.jus.br",
+          "ENV_URL_API_ASSINADOR": "https://teste-pje-assinador.app.tjpe.jus.br/assinador-a1/api/v1/assinar/"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      },
+      "problemMatcher": {
+        "pattern": { "regexp": "^$" },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "^.*PJe TJPE.*$",
+          "endsPattern": "^.*JBoss.*started|^.*ja esta rodando"
+        }
+      }
+    },
+    {
+      "label": "Start JBoss 2G",
+      "type": "shell",
+      "command": "${workspaceFolder}/.vscode/start-dev.bat",
+      "args": ["2g"],
+      "isBackground": true,
+      "options": {
+        "env": {
+          "JBOSS_HOME": "${env:USERPROFILE}\\jboss-eap-7.0",
+          "JAVA_HOME": "${env:USERPROFILE}\\jdk8u232-b09",
+          "MAVEN_HOME": "${env:USERPROFILE}\\apache-maven-3.6.3",
+          "ENV_EUREKA_CLIENT_NONSECURE_PORT": "8081",
+          "ENV_PJE2_CLOUD_APP_NAME": "pje-tjpe-legacy-2g",
+          "ENV_PJE2_CLOUD_URL_GATEWAY": "http://tjpe295846.tjpe.gov.br:8180",
+          "ENV_PJE2_AUDITORIA_TIPO_PERSISTENCIA": "DB",
+          "ENV_PJE2_CLOUD_RABBIT_AUTORIDADES_CERTIFICADORAS_CONSUMER": "false",
+          "ENV_PJE2_CLOUD_RABBIT_CONNECTION_REQUIRED": "true",
+          "ENV_PJE2_CLOUD_RABBIT_EXCHANGENAME": "pje.legacy",
+          "ENV_PJE2_CLOUD_RABBIT_HOST": "localhost",
+          "ENV_PJE2_CLOUD_RABBIT_JOB_DJE_ENABLED": "false",
+          "ENV_PJE2_CLOUD_RABBIT_JOBS_CONSUMER": "false",
+          "ENV_PJE2_CLOUD_RABBIT_JOBS_PUBLISHER": "false",
+          "ENV_PJE2_CLOUD_RABBIT_PASSWORD": "guest",
+          "ENV_PJE2_CLOUD_RABBIT_PORT": "5672",
+          "ENV_PJE2_CLOUD_RABBIT_PUBLISH_MESSAGES": "false",
+          "ENV_PJE2_CLOUD_RABBIT_QUEUENAME": "pje.exchange",
+          "ENV_PJE2_CLOUD_RABBIT_USERNAME": "guest",
+          "ENV_PJE2_CLOUD_RABBIT_VIRTUALHOST": "/",
+          "ENV_PJE2_CLOUD_REGISTRA_COM_IP": "true",
+          "ENV_PJE2_CLOUD_REGISTRAR": "true",
+          "ENV_PJE2_CORS_ENABLED": "true",
+          "ENV_PJE_UPDATE_AUTORIDADES_CERTIFICADORAS_ONSTARTUP": "false",
+          "ENV_SSO_AUTHENTICATION_ENABLED": "false",
+          "ENV_SSO_AUTHORIZATION_ENABLED": "false",
+          "ENV_SSO_AUTHSERVER_URL": "https://sso.stg.cloud.pje.jus.br/auth",
+          "ENV_SSO_CLIENT_ID": "pje-tjpe-2g",
+          "ENV_SSO_CLIENT_SECRET": "b9bbd9b7-c832-4e8f-a2a7-e211a973b80b",
+          "ENV_SSO_CONFIDENTIAL_PORT": "443",
+          "ENV_SSO_REALM": "pje",
+          "ENV_SSO_SSL_REQUIRED": "ALL",
+          "ENV_SSO_URL": "https://sso.stg.cloud.pje.jus.br",
+          "ENV_URL_API_ASSINADOR": "https://teste-pje-assinador.app.tjpe.jus.br/assinador-a1/api/v1/assinar/"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      },
+      "problemMatcher": {
+        "pattern": { "regexp": "^$" },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "^.*PJe TJPE.*$",
+          "endsPattern": "^.*JBoss.*started|^.*ja esta rodando"
+        }
+      }
+    }
+  ]
+}
