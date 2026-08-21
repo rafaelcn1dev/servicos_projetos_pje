@@ -1,0 +1,3 @@
+[mix:resourceExtensions] mixin
+ - jcr:temporary (boolean) = 'true' mandatory autocreated
+ - jcr:contentSize (long) = '0' mandatory autocreated

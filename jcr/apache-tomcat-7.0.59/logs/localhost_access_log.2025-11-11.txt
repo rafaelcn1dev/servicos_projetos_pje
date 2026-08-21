@@ -1,0 +1,6 @@
+127.0.0.1 - - [11/Nov/2025:11:17:25 -0300] "HEAD /jcr-storage-server/documents/e786bc281113e73fe541ec1bce273a1ca24a457a HTTP/1.1" 404 -
+127.0.0.1 - - [11/Nov/2025:11:17:26 -0300] "PUT /jcr-storage-server/documents/e786bc281113e73fe541ec1bce273a1ca24a457a HTTP/1.1" 204 -
+127.0.0.1 - - [11/Nov/2025:11:38:01 -0300] "HEAD /jcr-storage-server/documents/8ebf44d9eb0f6ca71cdc48023a527e997c95029a HTTP/1.1" 404 -
+127.0.0.1 - - [11/Nov/2025:11:38:01 -0300] "PUT /jcr-storage-server/documents/8ebf44d9eb0f6ca71cdc48023a527e997c95029a HTTP/1.1" 204 -
+127.0.0.1 - - [11/Nov/2025:17:02:43 -0300] "HEAD /jcr-storage-server/documents/4063486c556b557f9bde7ac21d40056f046002ec HTTP/1.1" 404 -
+127.0.0.1 - - [11/Nov/2025:17:02:44 -0300] "PUT /jcr-storage-server/documents/4063486c556b557f9bde7ac21d40056f046002ec HTTP/1.1" 204 -

@@ -1,0 +1,2 @@
+127.0.0.1 - - [30/Apr/2026:14:29:07 -0300] "HEAD /jcr-storage-server/documents/f04b3a4e8ce2d7f6218900764abbca058e1c4b74 HTTP/1.1" 404 -
+127.0.0.1 - - [30/Apr/2026:14:29:08 -0300] "PUT /jcr-storage-server/documents/f04b3a4e8ce2d7f6218900764abbca058e1c4b74 HTTP/1.1" 204 -

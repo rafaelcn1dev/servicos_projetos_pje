@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Configuracoes do atualiza pessoa</comment>
+<!-- dados da conexao pje -->
+<entry key="pje.connection.driver">org.postgresql.Driver</entry>
+<entry key="pje.connection.url">jdbc:postgresql://shdbpostgre02.tjpe.gov.br:5432/pje_jud2g_descanso_h</entry>
+<entry key="pje.connection.user">user_pje_jud2g</entry>
+<entry key="pje.connection.password">user_pje_jud2g</entry>
+
+<!-- dados da conexao da base de documentos-->
+<entry key="pje.bin.connection.driver">org.postgresql.Driver</entry>
+<entry key="pje.bin.connection.url">jdbc:postgresql://shdbpostgre02.tjpe.gov.br:5432/zpje_jud2g_descanso_p_bin</entry>
+<entry key="pje.bin.connection.user">user_pje_jud2g</entry>
+<entry key="pje.bin.connection.password">user_pje_jud2g</entry>
+
+<!-- Configuração do JCR-Storage -->
+<entry key="jcr-storage.url">http://localhost:8080/jcr-storage-server/documents</entry>
+<entry key="jcr-storage.username">admin</entry>
+<entry key="jcr-storage.password">admin</entry>
+
+<!--
+	1 - DB_JCR  - Migra os documentos do db-storage para o jcr-storage
+	2 - BIN_JCR - Migra os documentos da antiga base binária para o jcr-storage
+-->
+<entry key="tipoMigracao">DB_JCR</entry>
+
+<!-- configuracoes especificas -->
+<entry key="threads">5</entry>
+<entry key="buffer">5</entry>
+</properties>

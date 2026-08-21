@@ -1,0 +1,14 @@
+Essa aplicação deve ser utilizada para migrar os documentos 
+que estão em banco de dados para o  filesystem.
+
+1 - A aplicação suporta dois tipos de migração.
+   1.1 De db-storage para jcr-storage
+   1.2 Da antiga base binária para jcr-storage
+
+2 - Antes de realizar o procedimento deve-se alterar o arquivo properties.xml 
+	que fica dentro da pasta "conf" informando todos os dados de conexão.
+    2.1 O atributo "tipoMigracao" está com o valor padrão DB_JCR, que é a migração de 
+		db-storage para jcr-storage.
+
+3 - Para iniciar o procedimento, basta executar o arquivo "run.bat" 
+	para o windows ou "run.sh" para o linux.
