@@ -69,7 +69,7 @@
           "MAVEN_HOME": "${env:USERPROFILE}\\apache-maven-3.6.3",
           "ENV_EUREKA_CLIENT_NONSECURE_PORT": "8081",
           "ENV_PJE2_CLOUD_APP_NAME": "pje-tjpe-legacy-2g",
-          "ENV_PJE2_CLOUD_URL_GATEWAY": "http://tjpe295846.tjpe.gov.br:8180",
+          "ENV_PJE2_CLOUD_URL_GATEWAY": "http://${env:COMPUTERNAME}.tjpe.gov.br:8180",
           "ENV_PJE2_AUDITORIA_TIPO_PERSISTENCIA": "DB",
           "ENV_PJE2_CLOUD_RABBIT_AUTORIDADES_CERTIFICADORAS_CONSUMER": "false",
           "ENV_PJE2_CLOUD_RABBIT_CONNECTION_REQUIRED": "true",
