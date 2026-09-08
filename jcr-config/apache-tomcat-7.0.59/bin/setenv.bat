@@ -1,1 +1,1 @@
-set "CATALINA_OPTS=%CATALINA_OPTS% -Dbr.jus.cnj.jcr.serverProperties=C:\devTJPE\servicos\jcr\server.properties"
+set "CATALINA_OPTS=%CATALINA_OPTS% -Dbr.jus.cnj.jcr.serverProperties=%USERPROFILE%\jcr\server.properties

@@ -32,13 +32,11 @@ rem # Specify the location of the Java home directory (it is recommended that
 rem # this always be set). If set, then "%JAVA_HOME%\bin\java" will be used as
 rem # the Java VM executable; otherwise, "%JAVA%" will be used (see below).
 rem #
-rem set "JAVA_HOME=C:\devTJPE\java\jdk8u232-b09"
 
 rem #
 rem # Specify the exact Java VM executable to use - only used if JAVA_HOME is
 rem # not set. Default is "java".
 rem #
-rem set "JAVA=C:\devTJPE\java\jdk8u232-b09\bin\java"
 
 rem #
 rem # Specify options to pass to the Java VM. Note, there are some additional

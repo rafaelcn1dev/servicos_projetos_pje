@@ -46,7 +46,6 @@ rem # options that are always passed by run.bat.
 rem #
 
 rem # JVM memory allocation pool parameters - modify as appropriate.
-rem # set "JAVA_OPTS=-Xms1G -Xmx2G -XX:MetaspaceSize=512M -XX:MaxMetaspaceSize=512M -Dpje.producao=false -Dbr.jus.cnj.pje.jcr-storage.configuration=C:/devTJPE/servicos/pje-binarios/pjebinarios-storage.properties -Dfile.encoding=UTF-8"
 
 rem # Prefer IPv4
 set "JAVA_OPTS=%JAVA_OPTS% -Djava.net.preferIPv4Stack=true"

@@ -18,7 +18,7 @@ rem ---------------------------------------------------------------------------
 rem Start script for the CATALINA Server
 rem ---------------------------------------------------------------------------
 
-set JAVA_HOME=C:\devTJPE\servicos\java\jdk8u232-b09
+set "JAVA_HOME=%USERPROFILE%\jdk8u232-b09"
 
 setlocal
 
