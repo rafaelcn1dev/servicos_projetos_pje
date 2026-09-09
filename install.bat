@@ -250,7 +250,7 @@ echo.
 REM ---------------------------------------------------------------------------
 REM 2.1 Copiar arquivos de configuracao do JBoss (1G)
 REM ---------------------------------------------------------------------------
-echo [1/4] Copiando configuracao do JBoss 1G...
+echo [1/6] Copiando configuracao do JBoss 1G...
 
 if not exist "%JBOSS_HOME%\standalone\configuration" mkdir "%JBOSS_HOME%\standalone\configuration"
 
@@ -264,7 +264,7 @@ echo       OK - 1G configurado.
 REM ---------------------------------------------------------------------------
 REM 2.2 Copiar arquivos de configuracao do JBoss (2G)
 REM ---------------------------------------------------------------------------
-echo [2/4] Copiando configuracao do JBoss 2G...
+echo [2/6] Copiando configuracao do JBoss 2G...
 
 if not exist "%JBOSS_HOME%\standalone2\configuration" mkdir "%JBOSS_HOME%\standalone2\configuration"
 
@@ -278,7 +278,7 @@ echo       OK - 2G configurado.
 REM ---------------------------------------------------------------------------
 REM 2.3 Copiar documentacao do projeto
 REM ---------------------------------------------------------------------------
-echo [3/4] Copiando documentacao...
+echo [3/6] Copiando documentacao...
 
 copy /y "%SCRIPT_DIR%project-files\SETUP-AMBIENTE-DEV.md" "%PROJECT_DIR%\SETUP-AMBIENTE-DEV.md" >nul
 
@@ -288,7 +288,7 @@ REM ---------------------------------------------------------------------------
 REM 2.4 Copiar configuracoes do VS Code / Kiro (.vscode), incluindo o
 REM     start-dev.bat e seu script auxiliar fix-logging-abspath.vbs
 REM ---------------------------------------------------------------------------
-echo [4/4] Copiando configuracoes do Kiro/VS Code (.vscode)...
+echo [4/6] Copiando configuracoes do Kiro/VS Code (.vscode)...
 
 if not exist "%PROJECT_DIR%\.vscode" mkdir "%PROJECT_DIR%\.vscode"
 
@@ -298,6 +298,51 @@ copy /y "%SCRIPT_DIR%project-files\.vscode\tasks.json" "%PROJECT_DIR%\.vscode\ta
 copy /y "%SCRIPT_DIR%project-files\.vscode\launch.json" "%PROJECT_DIR%\.vscode\launch.json" >nul
 
 echo       OK - start-dev.bat, fix-logging-abspath.vbs, tasks.json e launch.json copiados.
+
+REM ---------------------------------------------------------------------------
+REM 2.5 Gravar o caminho do projeto (PROJECT_DIR) na linha "set PJE_HOME=..."
+REM     do 0.1 init.bat. Assim o PJE_HOME fica fixado com o valor informado
+REM     agora e so muda novamente se o install.bat for executado outra vez.
+REM     A reescrita e feita via PowerShell para preservar corretamente as
+REM     demais linhas (que contem %, !, "rem", etc.).
+REM ---------------------------------------------------------------------------
+echo [5/6] Gravando PJE_HOME no 0.1 init.bat...
+
+set "INIT_BAT=%SCRIPT_DIR%0.1 init.bat"
+if exist "%INIT_BAT%" (
+    powershell -NoProfile -Command ^
+        "$f = '%INIT_BAT%';" ^
+        "$dir = '%PROJECT_DIR%';" ^
+        "$lines = Get-Content -LiteralPath $f;" ^
+        "$out = $lines | ForEach-Object { if ($_ -match '^\s*set\s+PJE_HOME=') { 'set PJE_HOME=' + $dir } else { $_ } };" ^
+        "Set-Content -LiteralPath $f -Value $out -Encoding Default"
+    echo       OK - PJE_HOME definido como %PROJECT_DIR%
+) else (
+    echo       [AVISO] "0.1 init.bat" nao encontrado em %SCRIPT_DIR%; PJE_HOME nao foi atualizado.
+)
+
+REM ---------------------------------------------------------------------------
+REM 2.6 Copiar o server.properties externo para %JCR_DIR% (%USERPROFILE%\jcr).
+REM     O jcr-storage-server procura esse arquivo em
+REM     -Dbr.jus.cnj.jcr.serverProperties=%USERPROFILE%\jcr\server.properties
+REM     (definido no setenv.bat do Tomcat). Se ele nao existir, o Spring emite
+REM     o WARN "Could not load properties from URL [file:.../jcr/server.properties]".
+REM     Copiamos sempre (mesmo em reinstalacao) para garantir que exista.
+REM ---------------------------------------------------------------------------
+echo [6/6] Copiando server.properties do JCR...
+
+if not exist "%JCR_DIR%" mkdir "%JCR_DIR%"
+
+if exist "%SCRIPT_DIR%jcr\server.properties" (
+    copy /y "%SCRIPT_DIR%jcr\server.properties" "%JCR_DIR%\server.properties" >nul
+    if exist "%JCR_DIR%\server.properties" (
+        echo       OK - server.properties copiado para %JCR_DIR%
+    ) else (
+        echo       [ERRO] Falha ao copiar server.properties para %JCR_DIR%
+    )
+) else (
+    echo       [AVISO] "%SCRIPT_DIR%jcr\server.properties" nao encontrado; server.properties nao foi copiado.
+)
 
 echo.
 echo =========================================
