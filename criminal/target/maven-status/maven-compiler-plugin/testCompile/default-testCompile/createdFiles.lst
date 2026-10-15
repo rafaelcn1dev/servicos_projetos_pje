@@ -1,0 +1,6 @@
+br\jus\cnj\pje\criminal\unit\repositories\InformacaoCriminalRepositoryTest.class
+br\jus\cnj\pje\criminal\CriminalApplicationTests.class
+br\jus\cnj\pje\criminal\unit\controllers\TipoOrigemRestControllerTest.class
+br\jus\cnj\pje\criminal\unit\model\ConteudoInformacaoCriminalBeanTest.class
+br\jus\cnj\pje\criminal\integration\OrgaoProcedimentoOriginarioIntegrationTest.class
+br\jus\cnj\pje\criminal\unit\amqp\CriminalMessageConsumerTest.class

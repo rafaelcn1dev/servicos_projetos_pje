@@ -1,0 +1,1711 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:tns="http://impl.seeu.webservice.projudi.gov/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:ns1="http://schemas.xmlsoap.org/soap/http"
+	name="listaServicoSeeu"
+	targetNamespace="http://impl.seeu.webservice.projudi.gov/">
+	<wsdl:types>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns:tns="http://impl.seeu.webservice.projudi.gov/"
+			elementFormDefault="unqualified"
+			targetNamespace="http://impl.seeu.webservice.projudi.gov/"
+			version="1.0">
+			<xs:element
+				name="consultarStatusAvisosPendentesPorIdAviso"
+				type="tns:consultarStatusAvisosPendentesPorIdAviso" />
+			<xs:element
+				name="consultarStatusAvisosPendentesPorIdAvisoResponse"
+				type="tns:consultarStatusAvisosPendentesPorIdAvisoResponse" />
+			<xs:element name="getProcessoByChave"
+				type="tns:getProcessoByChave" />
+			<xs:element name="getProcessoByChaveResponse"
+				type="tns:getProcessoByChaveResponse" />
+			<xs:element
+				name="incluirAtualizarProcessoExecucaoPenalNacional"
+				type="tns:incluirAtualizarProcessoExecucaoPenalNacional" />
+			<xs:element
+				name="incluirAtualizarProcessoExecucaoPenalNacionalResponse"
+				type="tns:incluirAtualizarProcessoExecucaoPenalNacionalResponse" />
+			<xs:element name="listarSentenciadoAtivo"
+				type="tns:listarSentenciadoAtivo" />
+			<xs:element name="listarSentenciadoAtivoPorFiltro"
+				type="tns:listarSentenciadoAtivoPorFiltro" />
+			<xs:element name="listarSentenciadoAtivoPorFiltroResponse"
+				type="tns:listarSentenciadoAtivoPorFiltroResponse" />
+			<xs:element name="listarSentenciadoAtivoResponse"
+				type="tns:listarSentenciadoAtivoResponse" />
+			<xs:element name="listarSentenciadoPorFiltro"
+				type="tns:listarSentenciadoPorFiltro" />
+			<xs:element name="listarSentenciadoPorFiltroResponse"
+				type="tns:listarSentenciadoPorFiltroResponse" />
+			<xs:element name="listarSentenciadoPorSituacao"
+				type="tns:listarSentenciadoPorSituacao" />
+			<xs:element name="listarSentenciadoPorSituacaoResponse"
+				type="tns:listarSentenciadoPorSituacaoResponse" />
+			<xs:element name="listarSentenciados"
+				type="tns:listarSentenciados" />
+			<xs:element name="listarSentenciadosResponse"
+				type="tns:listarSentenciadosResponse" />
+			<xs:element name="obterIncidentesPorNumeroChaveProcesso"
+				type="tns:obterIncidentesPorNumeroChaveProcesso" />
+			<xs:element
+				name="obterIncidentesPorNumeroChaveProcessoResponse"
+				type="tns:obterIncidentesPorNumeroChaveProcessoResponse" />
+			<xs:element name="obterIncidentesPorNumeroUnicoProcesso"
+				type="tns:obterIncidentesPorNumeroUnicoProcesso" />
+			<xs:element
+				name="obterIncidentesPorNumeroUnicoProcessoResponse"
+				type="tns:obterIncidentesPorNumeroUnicoProcessoResponse" />
+			<xs:element
+				name="obterListaAcaoCriminalPorNumeroChaveProcesso"
+				type="tns:obterListaAcaoCriminalPorNumeroChaveProcesso" />
+			<xs:element
+				name="obterListaAcaoCriminalPorNumeroChaveProcessoResponse"
+				type="tns:obterListaAcaoCriminalPorNumeroChaveProcessoResponse" />
+			<xs:element
+				name="obterListaAcaoCriminalPorNumeroUnicoProcessoExecucao"
+				type="tns:obterListaAcaoCriminalPorNumeroUnicoProcessoExecucao" />
+			<xs:element
+				name="obterListaAcaoCriminalPorNumeroUnicoProcessoExecucaoResponse"
+				type="tns:obterListaAcaoCriminalPorNumeroUnicoProcessoExecucaoResponse" />
+			<xs:element name="obterRelatorioPorNumeroUnicoProccesso"
+				type="tns:obterRelatorioPorNumeroUnicoProccesso" />
+			<xs:element
+				name="obterRelatorioPorNumeroUnicoProccessoResponse"
+				type="tns:obterRelatorioPorNumeroUnicoProccessoResponse" />
+			<xs:element
+				name="obterSentenciadoAtivoPorNumeroChaveProcesso"
+				type="tns:obterSentenciadoAtivoPorNumeroChaveProcesso" />
+			<xs:element
+				name="obterSentenciadoAtivoPorNumeroChaveProcessoResponse"
+				type="tns:obterSentenciadoAtivoPorNumeroChaveProcessoResponse" />
+			<xs:element
+				name="obterSentenciadoAtivoPorNumeroFisicoProcesso"
+				type="tns:obterSentenciadoAtivoPorNumeroFisicoProcesso" />
+			<xs:element
+				name="obterSentenciadoAtivoPorNumeroFisicoProcessoResponse"
+				type="tns:obterSentenciadoAtivoPorNumeroFisicoProcessoResponse" />
+			<xs:element
+				name="obterSentenciadoAtivoPorNumeroUnicoProcesso"
+				type="tns:obterSentenciadoAtivoPorNumeroUnicoProcesso" />
+			<xs:element
+				name="obterSentenciadoAtivoPorNumeroUnicoProcessoResponse"
+				type="tns:obterSentenciadoAtivoPorNumeroUnicoProcessoResponse" />
+			<xs:element
+				name="obterSentenciadoPorNumeroUnicoAcaoCriminal"
+				type="tns:obterSentenciadoPorNumeroUnicoAcaoCriminal" />
+			<xs:element
+				name="obterSentenciadoPorNumeroUnicoAcaoCriminalResponse"
+				type="tns:obterSentenciadoPorNumeroUnicoAcaoCriminalResponse" />
+			<xs:element name="verificarDisponibilidadeWebService"
+				type="tns:verificarDisponibilidadeWebService" />
+			<xs:element
+				name="verificarDisponibilidadeWebServiceResponse"
+				type="tns:verificarDisponibilidadeWebServiceResponse" />
+			<xs:complexType
+				name="verificarDisponibilidadeWebService">
+				<xs:sequence />
+			</xs:complexType>
+			<xs:complexType
+				name="verificarDisponibilidadeWebServiceResponse">
+				<xs:sequence>
+					<xs:element name="return" type="xs:boolean" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType
+				name="incluirAtualizarProcessoExecucaoPenalNacional">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="usuario"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="senha" type="xs:string" />
+					<xs:element minOccurs="0" name="processoExecucaoPenal"
+						type="tns:processoExecucaoPenalNacionalSeeuWS" />
+					<xs:element maxOccurs="unbounded" minOccurs="0"
+						name="listaDefensor" type="tns:defensorAdvogadoNacionalSeeuWS" />
+					<xs:element maxOccurs="unbounded" minOccurs="0"
+						name="listaAdvogado" type="tns:defensorAdvogadoNacionalSeeuWS" />
+					<xs:element maxOccurs="unbounded" minOccurs="0"
+						name="listaAcaoCriminalPenaNacional"
+						type="tns:acaoCriminalPenaNacionalSeeuWS" />
+					<xs:element maxOccurs="unbounded" minOccurs="0"
+						name="listaArtigoCondenacao"
+						type="tns:artigoCondenacaoNacionalSeeuWS" />
+					<xs:element maxOccurs="unbounded" minOccurs="0"
+						name="listaMedidaAlternativa"
+						type="tns:medidaAlternativaNacionalSeeuWS" />
+					<xs:element minOccurs="0" name="codigoRetorno"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="msg" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType
+				name="processoExecucaoPenalNacionalSeeuWS">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="cidadeLocalPrisao"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="cidadeVaraExecucaoPenal"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="codAssuntoPrincipalCnj"
+						type="xs:long" />
+					<xs:element minOccurs="0" name="codClasseProcessualCnj"
+						type="xs:long" />
+					<xs:element minOccurs="0" name="codNivelEscolaridade"
+						type="xs:int" />
+					<xs:element minOccurs="0" name="codRegimePena"
+						type="xs:int" />
+					<xs:element minOccurs="0" name="codSituacaoProcesso"
+						type="xs:int" />
+					<xs:element minOccurs="0" name="codTribunal"
+						type="xs:long" />
+					<xs:element minOccurs="0" name="cpf" type="xs:string" />
+					<xs:element minOccurs="0" name="dataDistribuicao"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="dataInicioCumprimento"
+						type="xs:string" />
+					<xs:element minOccurs="0"
+						name="dataJustificativaLivramento" type="xs:string" />
+					<xs:element minOccurs="0"
+						name="dataJustificativaProgressao" type="xs:string" />
+					<xs:element minOccurs="0"
+						name="dataJustificativaTermino" type="xs:string" />
+					<xs:element minOccurs="0"
+						name="dataLivramentoCondicional" type="xs:string" />
+					<xs:element minOccurs="0" name="dataNascimento"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="dataProgressaoRegime"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="dataTerminoPena"
+						type="xs:string" />
+					<xs:element minOccurs="0"
+						name="databaseLivramentoCondicional" type="xs:string" />
+					<xs:element minOccurs="0"
+						name="databaseProgressaoRegime" type="xs:string" />
+					<xs:element minOccurs="0" name="digitoVerificadorRg"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="ehEstrangeiro"
+						type="xs:string" />
+					<xs:element minOccurs="0"
+						name="estahEmLivramentoCondicional" type="xs:string" />
+					<xs:element minOccurs="0" name="estahEmMedidaSeguranca"
+						type="xs:string" />
+					<xs:element minOccurs="0"
+						name="estahEmMonitoramentoEletronico" type="xs:string" />
+					<xs:element minOccurs="0" name="estahEmPenaSubstitutiva"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="estahEmSursis"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="estahForagido"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="extinto"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="flagSituacao"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="justificativaLivramento"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="justificativaProgressao"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="justificativaTermino"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="localPrisao"
+						type="xs:string" />
+					<xs:element minOccurs="0"
+						name="nacionalidadeSentenciado" type="xs:string" />
+					<xs:element minOccurs="0" name="naturalidadeSentenciado"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="nomeForum"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="nomeMae"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="nomePai"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="nomeSentenciado"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="nomeVaraExecucaoPenal"
+						type="xs:string" />
+					<xs:element minOccurs="0"
+						name="numeroDocumentoEstrangeiro" type="xs:string" />
+					<xs:element minOccurs="0" name="numeroUnico"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="orgaoExpedidorRg"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="penaTotalHedionda"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="penaTotalImposta"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="rg" type="xs:string" />
+					<xs:element minOccurs="0" name="sexo" type="xs:string" />
+					<xs:element minOccurs="0"
+						name="tipoDocumentoEstrangeiro" type="xs:string" />
+					<xs:element minOccurs="0"
+						name="totalCondenacaoExtintaIndultada" type="xs:string" />
+					<xs:element minOccurs="0" name="totalInterrupcao"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="totalRemicaoDias"
+						type="xs:long" />
+					<xs:element minOccurs="0" name="ufLocalPrisao"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="ufRg" type="xs:string" />
+					<xs:element minOccurs="0" name="ufSentenciado"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="ufVaraExecucaoPenal"
+						type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="defensorAdvogadoNacionalSeeuWS">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="nomeCompleto"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="oab" type="xs:string" />
+					<xs:element minOccurs="0" name="ufOab" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="acaoCriminalPenaNacionalSeeuWS">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="numeroUnicoAcaoCriminal"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="penaTotal"
+						type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="artigoCondenacaoNacionalSeeuWS">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="anoLei" type="xs:int" />
+					<xs:element minOccurs="0" name="artigoLei"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="ehHediondo"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="numeroLei"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="numeroUnicoAcaoCriminal"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="observacao"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="penaTotalArtigo"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="penaTotalArtigoEmDias"
+						type="xs:int" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="medidaAlternativaNacionalSeeuWS">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="codSituacao"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="codTipoAplicacao"
+						type="xs:int" />
+					<xs:element minOccurs="0" name="codTipoMedida"
+						type="xs:int" />
+					<xs:element minOccurs="0" name="dataInicioCumprimento"
+						type="xs:string" />
+					<xs:element minOccurs="0"
+						name="dataPrevistaEncerramento" type="xs:string" />
+					<xs:element minOccurs="0" name="dataRealEncerramento"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="numeroUnicoAcaoCriminal"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="observacao"
+						type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType
+				name="incluirAtualizarProcessoExecucaoPenalNacionalResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="codigoRetorno"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="msg" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType
+				name="obterSentenciadoAtivoPorNumeroFisicoProcesso">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="usuario"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="senha" type="xs:string" />
+					<xs:element minOccurs="0" name="numeroFisicoProcesso"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="codigoRetorno"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="msg" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType
+				name="obterSentenciadoAtivoPorNumeroFisicoProcessoResponse">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0"
+						name="return" type="tns:sentenciadoSeeu" />
+					<xs:element minOccurs="0" name="codigoRetorno"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="msg" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="sentenciadoSeeu">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="assuntoPrincipal"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="classe" type="xs:string" />
+					<xs:element minOccurs="0" name="codAssuntoPrincipal"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="codClasse"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="codForum"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="codPais"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="codTribunal"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="codVaraExecucaoPenal"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="cpf" type="xs:string" />
+					<xs:element minOccurs="0" name="dataDistribuicao"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="dataInicioCumprimento"
+						type="xs:string" />
+					<xs:element minOccurs="0"
+						name="dataJustificativaLivramento" type="xs:string" />
+					<xs:element minOccurs="0"
+						name="dataJustificativaProgressao" type="xs:string" />
+					<xs:element minOccurs="0"
+						name="dataJustificativaTerminoPena" type="xs:string" />
+					<xs:element minOccurs="0"
+						name="dataLivramentoCondicional" type="xs:string" />
+					<xs:element minOccurs="0" name="dataNascimento"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="dataProgressaoRegime"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="dataTerminoPena"
+						type="xs:string" />
+					<xs:element minOccurs="0"
+						name="databaseLivramentoCondicional" type="xs:string" />
+					<xs:element minOccurs="0"
+						name="databaseProgressaoRegime" type="xs:string" />
+					<xs:element minOccurs="0"
+						name="estahEmLivramentoCondicional" type="xs:string" />
+					<xs:element minOccurs="0" name="estahEmPenaSubstitutiva"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="estahEmSursis"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="estahForagido"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="estrangeiro"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="extinto"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="flagRegime"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="flagSituacao"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="justificativaLivramento"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="justificativaProgressao"
+						type="xs:string" />
+					<xs:element minOccurs="0"
+						name="justificativaTerminoPena" type="xs:string" />
+					<xs:element maxOccurs="unbounded" minOccurs="0"
+						name="listaAdvogadoParteSeeu" nillable="true"
+						type="tns:advogadoParteSeeu" />
+					<xs:element minOccurs="0" name="medidaSeguranca"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="naturalidade"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="nivelSigiloProcesso"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="nome" type="xs:string" />
+					<xs:element minOccurs="0" name="nomeForum"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="nomeMae"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="nomePai"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="nomeTribunal"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="nomeVaraExecucaoPenal"
+						type="xs:string" />
+					<xs:element minOccurs="0"
+						name="numeroDocumentoEstrangeiro" type="xs:string" />
+					<xs:element minOccurs="0" name="numeroProcesso"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="numeroRji"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="numeroUnico"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="pais" type="xs:string" />
+					<xs:element minOccurs="0" name="penaTotalCumprida"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="penaTotalImposta"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="penaTotalRestante"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="prisaoDomiciliar"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="regimePena"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="rgOrgaoExpedidor"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="rgParte"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="sexo" type="xs:string" />
+					<xs:element minOccurs="0" name="siglaUfRg"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="statusProcesso"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="tipoPenal"
+						type="xs:string" />
+					<xs:element minOccurs="0"
+						name="totalCondenacaoExtintaIndultada" type="xs:string" />
+					<xs:element minOccurs="0" name="totalInterrupcao"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="totalRemicaoDias"
+						type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="advogadoParteSeeu">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="nomeAdvogado"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="oabAdvogado"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="tipoAdvogado"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="ufOabAdvogado"
+						type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="listarSentenciadoAtivo">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="usuario"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="senha" type="xs:string" />
+					<xs:element minOccurs="0" name="pagina" type="xs:string" />
+					<xs:element minOccurs="0" name="codigoRetorno"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="msg" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="listarSentenciadoAtivoResponse">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0"
+						name="return" type="tns:sentenciadoSeeu" />
+					<xs:element minOccurs="0" name="pagina" type="xs:string" />
+					<xs:element minOccurs="0" name="tamanhoPagina"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="totalRegistros"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="totalPaginas"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="codigoRetorno"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="msg" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType
+				name="obterSentenciadoAtivoPorNumeroUnicoProcesso">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="usuario"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="senha" type="xs:string" />
+					<xs:element minOccurs="0" name="numeroUnicoProcesso"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="codigoRetorno"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="msg" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType
+				name="obterSentenciadoAtivoPorNumeroUnicoProcessoResponse">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0"
+						name="return" type="tns:sentenciadoSeeu" />
+					<xs:element minOccurs="0" name="codigoRetorno"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="msg" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType
+				name="obterListaAcaoCriminalPorNumeroChaveProcesso">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="usuario"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="senha" type="xs:string" />
+					<xs:element minOccurs="0" name="numeroChaveProcesso"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="codigoRetorno"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="msg" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType
+				name="obterListaAcaoCriminalPorNumeroChaveProcessoResponse">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0"
+						name="acaoCriminal" type="tns:acaoCriminalPenalSeeu" />
+					<xs:element minOccurs="0" name="codigoRetorno"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="msg" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="acaoCriminalPenalSeeu">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="aguardandoPrisao"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="anoProcesso"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="codAcaoPenalVinculada"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="dataAutuacao"
+						type="xs:dateTime" />
+					<xs:element minOccurs="0" name="dataDevolucaoTJ"
+						type="xs:dateTime" />
+					<xs:element minOccurs="0" name="dataEncaminhamentoTJ"
+						type="xs:dateTime" />
+					<xs:element minOccurs="0" name="dataInfracao"
+						type="xs:dateTime" />
+					<xs:element minOccurs="0" name="dataPronuncia"
+						type="xs:dateTime" />
+					<xs:element minOccurs="0" name="dataRecebimentoDenuncia"
+						type="xs:dateTime" />
+					<xs:element minOccurs="0" name="dataRecebimentoVep"
+						type="xs:dateTime" />
+					<xs:element minOccurs="0" name="dataSentenca"
+						type="xs:dateTime" />
+					<xs:element minOccurs="0" name="dataTransitoJulgado"
+						type="xs:dateTime" />
+					<xs:element minOccurs="0"
+						name="dataTransitoJulgadoAcusacao" type="xs:dateTime" />
+					<xs:element minOccurs="0" name="ehDefesaOuAcusacao"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="ehDefinitivaProvisoria"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="ehReincidente"
+						type="xs:string" />
+					<xs:element maxOccurs="unbounded" minOccurs="0"
+						name="listaPenaCriminal" nillable="true"
+						type="tns:penaCriminalSeeu" />
+					<xs:element minOccurs="0" name="nomeVaraOrigem"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="numeroUnico"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="processoEmGrauRecurso"
+						type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="penaCriminalSeeu">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="anoRecurso"
+						type="xs:int" />
+					<xs:element minOccurs="0" name="camaraJulgadoraRecurso"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="codAcaoPenalVinculada"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="codPenaExecucao"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="concedido"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="dataAutuacaoRecurso"
+						type="xs:dateTime" />
+					<xs:element minOccurs="0" name="dataDecisaoRecurso"
+						type="xs:dateTime" />
+					<xs:element minOccurs="0" name="dataInicio"
+						type="xs:dateTime" />
+					<xs:element minOccurs="0"
+						name="dataTransitoJulgadoRecurso" type="xs:dateTime" />
+					<xs:element minOccurs="0" name="diasMulta"
+						type="xs:string" />
+					<xs:element maxOccurs="unbounded" minOccurs="0"
+						name="listaDesmembramentoPenaCriminalSeeu" nillable="true"
+						type="tns:desmembramentoPenaCriminalSeeu" />
+					<xs:element minOccurs="0" name="multaPaga"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="numeroAcordaoRecurso"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="numeroRecurso"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="orgaoJulgadorRecurso"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="penaImposta"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="recorrenteRecurso"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="regimePena"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="tipoPena"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="tipoPenaDescricao"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="valorMulta"
+						type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="desmembramentoPenaCriminalSeeu">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="artigoLei"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="codItemPenaExecucao"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="codPenaExecucao"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="complemento"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="dataDelito"
+						type="xs:dateTime" />
+					<xs:element minOccurs="0" name="dataExtincao"
+						type="xs:dateTime" />
+					<xs:element minOccurs="0" name="dataLei"
+						type="xs:dateTime" />
+					<xs:element minOccurs="0" name="dataSuspensao"
+						type="xs:dateTime" />
+					<xs:element minOccurs="0" name="diasMulta"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="extinto"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="extintoCumprimento"
+						type="xs:string" />
+					<xs:element minOccurs="0"
+						name="fracaoLivramentoCondicional" type="xs:string" />
+					<xs:element minOccurs="0" name="fracaoProgressaoRegime"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="manterFracao"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="numeroLei"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="pagouMulta"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="reincidenteComum"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="suspenso"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="tempoPena"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="valorMulta"
+						type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType
+				name="obterIncidentesPorNumeroChaveProcesso">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="usuario"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="senha" type="xs:string" />
+					<xs:element minOccurs="0" name="numeroChaveProcesso"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="codigoRetorno"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="msg" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType
+				name="obterIncidentesPorNumeroChaveProcessoResponse">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0"
+						name="incidente" type="tns:incidenteSeeu" />
+					<xs:element minOccurs="0" name="codigoRetorno"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="msg" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="incidenteSeeu">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="numero" type="xs:string" />
+					<xs:element minOccurs="0" name="categoria"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="tipo" type="xs:string" />
+					<xs:element minOccurs="0" name="complemento"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="dataReferencia"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="dataAtuacao"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="peticao"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="dataDecisao"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="juiz" type="xs:string" />
+					<xs:element minOccurs="0" name="situacao"
+						type="xs:string" />
+					<xs:element maxOccurs="unbounded" minOccurs="0"
+						name="listaAcaoPenalSeeu" nillable="true" type="tns:acaoPenalSeeu" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="acaoPenalSeeu">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="numeroUnicoAcaoPenal"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="dataSetencaAcaoPenal"
+						type="xs:string" />
+					<xs:element minOccurs="0"
+						name="dataTransitoJulgadoAcaoPenal" type="xs:string" />
+					<xs:element minOccurs="0"
+						name="penaAtivaCompletaAcaoPenal" type="xs:string" />
+					<xs:element minOccurs="0" name="tipoAcaoPenal"
+						type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="listarSentenciadoPorFiltro">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="usuario"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="senha" type="xs:string" />
+					<xs:element minOccurs="0" name="codTribunal"
+						type="xs:long" />
+					<xs:element minOccurs="0" name="nome" type="xs:string" />
+					<xs:element minOccurs="0" name="nomeMae"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="nomePai"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="dataNascimento"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="sexo" type="xs:string" />
+					<xs:element minOccurs="0" name="rgParte"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="siglaUfRg"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="cpf" type="xs:string" />
+					<xs:element minOccurs="0" name="situacao" type="xs:int" />
+					<xs:element minOccurs="0" name="pagina" type="xs:string" />
+					<xs:element minOccurs="0" name="codigoRetorno"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="msg" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType
+				name="listarSentenciadoPorFiltroResponse">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0"
+						name="return" type="tns:sentenciadoSeeu" />
+					<xs:element minOccurs="0" name="pagina" type="xs:string" />
+					<xs:element minOccurs="0" name="tamanhoPagina"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="totalRegistros"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="totalPaginas"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="codigoRetorno"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="msg" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType
+				name="obterRelatorioPorNumeroUnicoProccesso">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="idUsuario"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="senhaUsuario"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="numeroProcesso"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="tipoRelatorio"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="codigoRetorno"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="msg" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType
+				name="obterRelatorioPorNumeroUnicoProccessoResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="return"
+						type="tns:relatorioSeeu" />
+					<xs:element minOccurs="0" name="codigoRetorno"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="msg" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="relatorioSeeu">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="numeroProcesso"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="dataHora"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="descricao"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="hash" type="xs:string" />
+					<xs:element minOccurs="0" name="mimeType"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="conteudo"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="dataEnvio"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="codigoAutenticacao"
+						type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="listarSentenciados">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="filtroSentenciado"
+						type="tns:filtroSentenciado" />
+					<xs:element minOccurs="0" name="usuario"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="senha" type="xs:string" />
+					<xs:element minOccurs="0" name="pagina" type="xs:string" />
+					<xs:element minOccurs="0" name="codigoRetorno"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="msg" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="filtroSentenciado">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="codTribunal"
+						type="xs:long" />
+					<xs:element minOccurs="0" name="cpf" type="xs:string" />
+					<xs:element minOccurs="0" name="dataNascimento"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="nome" type="xs:string" />
+					<xs:element minOccurs="0" name="nomeMae"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="nomePai"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="numRJI" type="xs:string" />
+					<xs:element minOccurs="0" name="rgParte"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="sexo" type="xs:string" />
+					<xs:element minOccurs="0" name="siglaUfRg"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="situacao" type="xs:int" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="listarSentenciadosResponse">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0"
+						name="return" type="tns:sentenciadoSeeu" />
+					<xs:element minOccurs="0" name="pagina" type="xs:string" />
+					<xs:element minOccurs="0" name="tamanhoPagina"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="totalRegistros"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="totalPaginas"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="codigoRetorno"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="msg" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType
+				name="obterSentenciadoAtivoPorNumeroChaveProcesso">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="usuario"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="senha" type="xs:string" />
+					<xs:element minOccurs="0" name="numeroChaveProcesso"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="codigoRetorno"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="msg" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType
+				name="obterSentenciadoAtivoPorNumeroChaveProcessoResponse">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0"
+						name="return" type="tns:sentenciadoSeeu" />
+					<xs:element minOccurs="0" name="codigoRetorno"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="msg" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType
+				name="obterIncidentesPorNumeroUnicoProcesso">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="usuario"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="senha" type="xs:string" />
+					<xs:element minOccurs="0" name="numeroUnicoProcesso"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="codigoRetorno"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="msg" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType
+				name="obterIncidentesPorNumeroUnicoProcessoResponse">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0"
+						name="incidente" type="tns:incidenteSeeu" />
+					<xs:element minOccurs="0" name="codigoRetorno"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="msg" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="listarSentenciadoAtivoPorFiltro">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="usuario"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="senha" type="xs:string" />
+					<xs:element minOccurs="0" name="codTribunal"
+						type="xs:long" />
+					<xs:element minOccurs="0" name="nome" type="xs:string" />
+					<xs:element minOccurs="0" name="nomeMae"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="nomePai"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="dataNascimento"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="sexo" type="xs:string" />
+					<xs:element minOccurs="0" name="rgParte"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="siglaUfRg"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="cpf" type="xs:string" />
+					<xs:element minOccurs="0" name="pagina" type="xs:string" />
+					<xs:element minOccurs="0" name="codigoRetorno"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="msg" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType
+				name="listarSentenciadoAtivoPorFiltroResponse">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0"
+						name="return" type="tns:sentenciadoSeeu" />
+					<xs:element minOccurs="0" name="pagina" type="xs:string" />
+					<xs:element minOccurs="0" name="tamanhoPagina"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="totalRegistros"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="totalPaginas"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="codigoRetorno"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="msg" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType
+				name="consultarStatusAvisosPendentesPorIdAviso">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="idUsuario"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="senhaUsuario"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="idAviso"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="codigoRetorno"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="msg" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType
+				name="consultarStatusAvisosPendentesPorIdAvisoResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="return"
+						type="tns:consultarStatusAvisosPendentes" />
+					<xs:element minOccurs="0" name="codigoRetorno"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="msg" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="consultarStatusAvisosPendentes">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="numeroProcesso"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="idAviso"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="situacaoAvisoPendente"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="dataAbertura"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="dataRetorno"
+						type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType
+				name="obterSentenciadoPorNumeroUnicoAcaoCriminal">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="usuario"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="senha" type="xs:string" />
+					<xs:element minOccurs="0"
+						name="numeroUnicoProcessoCriminal" type="xs:string" />
+					<xs:element minOccurs="0" name="codigoRetorno"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="msg" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType
+				name="obterSentenciadoPorNumeroUnicoAcaoCriminalResponse">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0"
+						name="return" type="tns:sentenciadoSeeu" />
+					<xs:element minOccurs="0" name="codigoRetorno"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="msg" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="getProcessoByChave">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="arg0" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="getProcessoByChaveResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="return" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType
+				name="obterListaAcaoCriminalPorNumeroUnicoProcessoExecucao">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="usuario"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="senha" type="xs:string" />
+					<xs:element minOccurs="0"
+						name="numeroUnicoProcessoExecucao" type="xs:string" />
+					<xs:element minOccurs="0" name="codigoRetorno"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="msg" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType
+				name="obterListaAcaoCriminalPorNumeroUnicoProcessoExecucaoResponse">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0"
+						name="return" type="tns:acaoCriminalPenalSeeu" />
+					<xs:element minOccurs="0" name="codigoRetorno"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="msg" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="listarSentenciadoPorSituacao">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="usuario"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="senha" type="xs:string" />
+					<xs:element minOccurs="0" name="situacao" type="xs:int" />
+					<xs:element minOccurs="0" name="pagina" type="xs:string" />
+					<xs:element minOccurs="0" name="codigoRetorno"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="msg" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType
+				name="listarSentenciadoPorSituacaoResponse">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0"
+						name="return" type="tns:sentenciadoSeeu" />
+					<xs:element minOccurs="0" name="pagina" type="xs:string" />
+					<xs:element minOccurs="0" name="tamanhoPagina"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="totalRegistros"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="totalPaginas"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="codigoRetorno"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="msg" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="verificarDisponibilidadeWebService">
+		<wsdl:part element="tns:verificarDisponibilidadeWebService"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="listarSentenciadoAtivo">
+		<wsdl:part element="tns:listarSentenciadoAtivo"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message
+		name="obterSentenciadoAtivoPorNumeroUnicoProcesso">
+		<wsdl:part
+			element="tns:obterSentenciadoAtivoPorNumeroUnicoProcesso"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message
+		name="incluirAtualizarProcessoExecucaoPenalNacionalResponse">
+		<wsdl:part
+			element="tns:incluirAtualizarProcessoExecucaoPenalNacionalResponse"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message
+		name="obterListaAcaoCriminalPorNumeroChaveProcesso">
+		<wsdl:part
+			element="tns:obterListaAcaoCriminalPorNumeroChaveProcesso"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="listarSentenciadoAtivoResponse">
+		<wsdl:part element="tns:listarSentenciadoAtivoResponse"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="listarSentenciadoPorFiltro">
+		<wsdl:part element="tns:listarSentenciadoPorFiltro"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message
+		name="obterListaAcaoCriminalPorNumeroUnicoProcessoExecucaoResponse">
+		<wsdl:part
+			element="tns:obterListaAcaoCriminalPorNumeroUnicoProcessoExecucaoResponse"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message
+		name="obterRelatorioPorNumeroUnicoProccessoResponse">
+		<wsdl:part
+			element="tns:obterRelatorioPorNumeroUnicoProccessoResponse"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message
+		name="obterIncidentesPorNumeroChaveProcessoResponse">
+		<wsdl:part
+			element="tns:obterIncidentesPorNumeroChaveProcessoResponse"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message
+		name="obterSentenciadoAtivoPorNumeroFisicoProcessoResponse">
+		<wsdl:part
+			element="tns:obterSentenciadoAtivoPorNumeroFisicoProcessoResponse"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="listarSentenciados">
+		<wsdl:part element="tns:listarSentenciados"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message
+		name="obterSentenciadoAtivoPorNumeroChaveProcessoResponse">
+		<wsdl:part
+			element="tns:obterSentenciadoAtivoPorNumeroChaveProcessoResponse"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="listarSentenciadoPorSituacaoResponse">
+		<wsdl:part
+			element="tns:listarSentenciadoPorSituacaoResponse" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message
+		name="consultarStatusAvisosPendentesPorIdAvisoResponse">
+		<wsdl:part
+			element="tns:consultarStatusAvisosPendentesPorIdAvisoResponse"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="listarSentenciadosResponse">
+		<wsdl:part element="tns:listarSentenciadosResponse"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="listarSentenciadoAtivoPorFiltro">
+		<wsdl:part element="tns:listarSentenciadoAtivoPorFiltro"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message
+		name="obterSentenciadoPorNumeroUnicoAcaoCriminalResponse">
+		<wsdl:part
+			element="tns:obterSentenciadoPorNumeroUnicoAcaoCriminalResponse"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message
+		name="consultarStatusAvisosPendentesPorIdAviso">
+		<wsdl:part
+			element="tns:consultarStatusAvisosPendentesPorIdAviso"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message
+		name="obterSentenciadoPorNumeroUnicoAcaoCriminal">
+		<wsdl:part
+			element="tns:obterSentenciadoPorNumeroUnicoAcaoCriminal"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message
+		name="obterListaAcaoCriminalPorNumeroChaveProcessoResponse">
+		<wsdl:part
+			element="tns:obterListaAcaoCriminalPorNumeroChaveProcessoResponse"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getProcessoByChave">
+		<wsdl:part element="tns:getProcessoByChave"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message
+		name="incluirAtualizarProcessoExecucaoPenalNacional">
+		<wsdl:part
+			element="tns:incluirAtualizarProcessoExecucaoPenalNacional"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message
+		name="obterSentenciadoAtivoPorNumeroFisicoProcesso">
+		<wsdl:part
+			element="tns:obterSentenciadoAtivoPorNumeroFisicoProcesso"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message
+		name="listarSentenciadoAtivoPorFiltroResponse">
+		<wsdl:part
+			element="tns:listarSentenciadoAtivoPorFiltroResponse"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="obterIncidentesPorNumeroChaveProcesso">
+		<wsdl:part
+			element="tns:obterIncidentesPorNumeroChaveProcesso" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="obterRelatorioPorNumeroUnicoProccesso">
+		<wsdl:part
+			element="tns:obterRelatorioPorNumeroUnicoProccesso" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getProcessoByChaveResponse">
+		<wsdl:part element="tns:getProcessoByChaveResponse"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message
+		name="obterSentenciadoAtivoPorNumeroUnicoProcessoResponse">
+		<wsdl:part
+			element="tns:obterSentenciadoAtivoPorNumeroUnicoProcessoResponse"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message
+		name="obterIncidentesPorNumeroUnicoProcessoResponse">
+		<wsdl:part
+			element="tns:obterIncidentesPorNumeroUnicoProcessoResponse"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="listarSentenciadoPorFiltroResponse">
+		<wsdl:part element="tns:listarSentenciadoPorFiltroResponse"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message
+		name="obterSentenciadoAtivoPorNumeroChaveProcesso">
+		<wsdl:part
+			element="tns:obterSentenciadoAtivoPorNumeroChaveProcesso"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="obterIncidentesPorNumeroUnicoProcesso">
+		<wsdl:part
+			element="tns:obterIncidentesPorNumeroUnicoProcesso" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message
+		name="verificarDisponibilidadeWebServiceResponse">
+		<wsdl:part
+			element="tns:verificarDisponibilidadeWebServiceResponse"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message
+		name="obterListaAcaoCriminalPorNumeroUnicoProcessoExecucao">
+		<wsdl:part
+			element="tns:obterListaAcaoCriminalPorNumeroUnicoProcessoExecucao"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="listarSentenciadoPorSituacao">
+		<wsdl:part element="tns:listarSentenciadoPorSituacao"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="SeeuWebServiceImpl">
+		<wsdl:operation
+			name="verificarDisponibilidadeWebService">
+			<wsdl:input
+				message="tns:verificarDisponibilidadeWebService"
+				name="verificarDisponibilidadeWebService">
+			</wsdl:input>
+			<wsdl:output
+				message="tns:verificarDisponibilidadeWebServiceResponse"
+				name="verificarDisponibilidadeWebServiceResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation
+			name="incluirAtualizarProcessoExecucaoPenalNacional">
+			<wsdl:input
+				message="tns:incluirAtualizarProcessoExecucaoPenalNacional"
+				name="incluirAtualizarProcessoExecucaoPenalNacional">
+			</wsdl:input>
+			<wsdl:output
+				message="tns:incluirAtualizarProcessoExecucaoPenalNacionalResponse"
+				name="incluirAtualizarProcessoExecucaoPenalNacionalResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation
+			name="obterSentenciadoAtivoPorNumeroFisicoProcesso">
+			<wsdl:input
+				message="tns:obterSentenciadoAtivoPorNumeroFisicoProcesso"
+				name="obterSentenciadoAtivoPorNumeroFisicoProcesso">
+			</wsdl:input>
+			<wsdl:output
+				message="tns:obterSentenciadoAtivoPorNumeroFisicoProcessoResponse"
+				name="obterSentenciadoAtivoPorNumeroFisicoProcessoResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="listarSentenciadoAtivo">
+			<wsdl:input message="tns:listarSentenciadoAtivo"
+				name="listarSentenciadoAtivo">
+			</wsdl:input>
+			<wsdl:output message="tns:listarSentenciadoAtivoResponse"
+				name="listarSentenciadoAtivoResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation
+			name="obterSentenciadoAtivoPorNumeroUnicoProcesso">
+			<wsdl:input
+				message="tns:obterSentenciadoAtivoPorNumeroUnicoProcesso"
+				name="obterSentenciadoAtivoPorNumeroUnicoProcesso">
+			</wsdl:input>
+			<wsdl:output
+				message="tns:obterSentenciadoAtivoPorNumeroUnicoProcessoResponse"
+				name="obterSentenciadoAtivoPorNumeroUnicoProcessoResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation
+			name="obterListaAcaoCriminalPorNumeroChaveProcesso">
+			<wsdl:input
+				message="tns:obterListaAcaoCriminalPorNumeroChaveProcesso"
+				name="obterListaAcaoCriminalPorNumeroChaveProcesso">
+			</wsdl:input>
+			<wsdl:output
+				message="tns:obterListaAcaoCriminalPorNumeroChaveProcessoResponse"
+				name="obterListaAcaoCriminalPorNumeroChaveProcessoResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation
+			name="obterIncidentesPorNumeroChaveProcesso">
+			<wsdl:input
+				message="tns:obterIncidentesPorNumeroChaveProcesso"
+				name="obterIncidentesPorNumeroChaveProcesso">
+			</wsdl:input>
+			<wsdl:output
+				message="tns:obterIncidentesPorNumeroChaveProcessoResponse"
+				name="obterIncidentesPorNumeroChaveProcessoResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="listarSentenciadoPorFiltro">
+			<wsdl:input message="tns:listarSentenciadoPorFiltro"
+				name="listarSentenciadoPorFiltro">
+			</wsdl:input>
+			<wsdl:output
+				message="tns:listarSentenciadoPorFiltroResponse"
+				name="listarSentenciadoPorFiltroResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation
+			name="obterRelatorioPorNumeroUnicoProccesso">
+			<wsdl:input
+				message="tns:obterRelatorioPorNumeroUnicoProccesso"
+				name="obterRelatorioPorNumeroUnicoProccesso">
+			</wsdl:input>
+			<wsdl:output
+				message="tns:obterRelatorioPorNumeroUnicoProccessoResponse"
+				name="obterRelatorioPorNumeroUnicoProccessoResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="listarSentenciados">
+			<wsdl:input message="tns:listarSentenciados"
+				name="listarSentenciados">
+			</wsdl:input>
+			<wsdl:output message="tns:listarSentenciadosResponse"
+				name="listarSentenciadosResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation
+			name="obterSentenciadoAtivoPorNumeroChaveProcesso">
+			<wsdl:input
+				message="tns:obterSentenciadoAtivoPorNumeroChaveProcesso"
+				name="obterSentenciadoAtivoPorNumeroChaveProcesso">
+			</wsdl:input>
+			<wsdl:output
+				message="tns:obterSentenciadoAtivoPorNumeroChaveProcessoResponse"
+				name="obterSentenciadoAtivoPorNumeroChaveProcessoResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation
+			name="obterIncidentesPorNumeroUnicoProcesso">
+			<wsdl:input
+				message="tns:obterIncidentesPorNumeroUnicoProcesso"
+				name="obterIncidentesPorNumeroUnicoProcesso">
+			</wsdl:input>
+			<wsdl:output
+				message="tns:obterIncidentesPorNumeroUnicoProcessoResponse"
+				name="obterIncidentesPorNumeroUnicoProcessoResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="listarSentenciadoAtivoPorFiltro">
+			<wsdl:input message="tns:listarSentenciadoAtivoPorFiltro"
+				name="listarSentenciadoAtivoPorFiltro">
+			</wsdl:input>
+			<wsdl:output
+				message="tns:listarSentenciadoAtivoPorFiltroResponse"
+				name="listarSentenciadoAtivoPorFiltroResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation
+			name="consultarStatusAvisosPendentesPorIdAviso">
+			<wsdl:input
+				message="tns:consultarStatusAvisosPendentesPorIdAviso"
+				name="consultarStatusAvisosPendentesPorIdAviso">
+			</wsdl:input>
+			<wsdl:output
+				message="tns:consultarStatusAvisosPendentesPorIdAvisoResponse"
+				name="consultarStatusAvisosPendentesPorIdAvisoResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation
+			name="obterSentenciadoPorNumeroUnicoAcaoCriminal">
+			<wsdl:input
+				message="tns:obterSentenciadoPorNumeroUnicoAcaoCriminal"
+				name="obterSentenciadoPorNumeroUnicoAcaoCriminal">
+			</wsdl:input>
+			<wsdl:output
+				message="tns:obterSentenciadoPorNumeroUnicoAcaoCriminalResponse"
+				name="obterSentenciadoPorNumeroUnicoAcaoCriminalResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getProcessoByChave">
+			<wsdl:input message="tns:getProcessoByChave"
+				name="getProcessoByChave">
+			</wsdl:input>
+			<wsdl:output message="tns:getProcessoByChaveResponse"
+				name="getProcessoByChaveResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation
+			name="obterListaAcaoCriminalPorNumeroUnicoProcessoExecucao">
+			<wsdl:input
+				message="tns:obterListaAcaoCriminalPorNumeroUnicoProcessoExecucao"
+				name="obterListaAcaoCriminalPorNumeroUnicoProcessoExecucao">
+			</wsdl:input>
+			<wsdl:output
+				message="tns:obterListaAcaoCriminalPorNumeroUnicoProcessoExecucaoResponse"
+				name="obterListaAcaoCriminalPorNumeroUnicoProcessoExecucaoResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="listarSentenciadoPorSituacao">
+			<wsdl:input message="tns:listarSentenciadoPorSituacao"
+				name="listarSentenciadoPorSituacao">
+			</wsdl:input>
+			<wsdl:output
+				message="tns:listarSentenciadoPorSituacaoResponse"
+				name="listarSentenciadoPorSituacaoResponse">
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="listaServicoSeeuSoapBinding"
+		type="tns:SeeuWebServiceImpl">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation
+			name="verificarDisponibilidadeWebService">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input name="verificarDisponibilidadeWebService">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output
+				name="verificarDisponibilidadeWebServiceResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation
+			name="incluirAtualizarProcessoExecucaoPenalNacional">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input
+				name="incluirAtualizarProcessoExecucaoPenalNacional">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output
+				name="incluirAtualizarProcessoExecucaoPenalNacionalResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation
+			name="obterSentenciadoAtivoPorNumeroFisicoProcesso">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input
+				name="obterSentenciadoAtivoPorNumeroFisicoProcesso">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output
+				name="obterSentenciadoAtivoPorNumeroFisicoProcessoResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="listarSentenciadoAtivo">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input name="listarSentenciadoAtivo">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="listarSentenciadoAtivoResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation
+			name="obterSentenciadoAtivoPorNumeroUnicoProcesso">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input
+				name="obterSentenciadoAtivoPorNumeroUnicoProcesso">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output
+				name="obterSentenciadoAtivoPorNumeroUnicoProcessoResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation
+			name="obterListaAcaoCriminalPorNumeroChaveProcesso">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input
+				name="obterListaAcaoCriminalPorNumeroChaveProcesso">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output
+				name="obterListaAcaoCriminalPorNumeroChaveProcessoResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="listarSentenciadoPorFiltro">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input name="listarSentenciadoPorFiltro">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="listarSentenciadoPorFiltroResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation
+			name="obterIncidentesPorNumeroChaveProcesso">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input name="obterIncidentesPorNumeroChaveProcesso">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output
+				name="obterIncidentesPorNumeroChaveProcessoResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation
+			name="obterRelatorioPorNumeroUnicoProccesso">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input name="obterRelatorioPorNumeroUnicoProccesso">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output
+				name="obterRelatorioPorNumeroUnicoProccessoResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="listarSentenciados">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input name="listarSentenciados">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="listarSentenciadosResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation
+			name="obterSentenciadoAtivoPorNumeroChaveProcesso">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input
+				name="obterSentenciadoAtivoPorNumeroChaveProcesso">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output
+				name="obterSentenciadoAtivoPorNumeroChaveProcessoResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation
+			name="obterIncidentesPorNumeroUnicoProcesso">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input name="obterIncidentesPorNumeroUnicoProcesso">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output
+				name="obterIncidentesPorNumeroUnicoProcessoResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="listarSentenciadoAtivoPorFiltro">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input name="listarSentenciadoAtivoPorFiltro">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output
+				name="listarSentenciadoAtivoPorFiltroResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation
+			name="consultarStatusAvisosPendentesPorIdAviso">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input
+				name="consultarStatusAvisosPendentesPorIdAviso">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output
+				name="consultarStatusAvisosPendentesPorIdAvisoResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation
+			name="obterSentenciadoPorNumeroUnicoAcaoCriminal">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input
+				name="obterSentenciadoPorNumeroUnicoAcaoCriminal">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output
+				name="obterSentenciadoPorNumeroUnicoAcaoCriminalResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getProcessoByChave">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input name="getProcessoByChave">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="getProcessoByChaveResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation
+			name="obterListaAcaoCriminalPorNumeroUnicoProcessoExecucao">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input
+				name="obterListaAcaoCriminalPorNumeroUnicoProcessoExecucao">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output
+				name="obterListaAcaoCriminalPorNumeroUnicoProcessoExecucaoResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="listarSentenciadoPorSituacao">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input name="listarSentenciadoPorSituacao">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="listarSentenciadoPorSituacaoResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="listaServicoSeeu">
+		<wsdl:port binding="tns:listaServicoSeeuSoapBinding"
+			name="SeeuWebServiceImplPort">
+			<soap:address
+				location="https://seeuintegra.pje.jus.br/seeu/listaServicoSeeu" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

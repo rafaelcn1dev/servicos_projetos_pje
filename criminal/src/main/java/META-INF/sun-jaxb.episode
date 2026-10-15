@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bindings xmlns="http://java.sun.com/xml/ns/jaxb" if-exists="true" version="2.1">
+  <!--
+
+Este arquivo foi gerado pela Arquitetura JavaTM para Implementação de Referência (JAXB) de Bind XML, v2.3.0 
+Consulte <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+Todas as modificações neste arquivo serão perdidas após a recompilação do esquema de origem. 
+Gerado em: 2022.09.26 às 04:01:17 PM BRT 
+
+  -->
+  <bindings xmlns:tns="http://impl.seeu.webservice.projudi.gov/" if-exists="true" scd="x-schema::tns">
+    <schemaBindings map="false">
+      <package name="br.jus.cnj.pje.criminal.seeu.extramni"/>
+    </schemaBindings>
+    <bindings if-exists="true" scd="~tns:consultarStatusAvisosPendentesPorIdAviso">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.ConsultarStatusAvisosPendentesPorIdAviso"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:consultarStatusAvisosPendentesPorIdAvisoResponse">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.ConsultarStatusAvisosPendentesPorIdAvisoResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:getProcessoByChave">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.GetProcessoByChave"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:getProcessoByChaveResponse">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.GetProcessoByChaveResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:incluirAtualizarProcessoExecucaoPenalNacional">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.IncluirAtualizarProcessoExecucaoPenalNacional"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:incluirAtualizarProcessoExecucaoPenalNacionalResponse">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.IncluirAtualizarProcessoExecucaoPenalNacionalResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:listarSentenciadoAtivo">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.ListarSentenciadoAtivo"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:listarSentenciadoAtivoPorFiltro">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.ListarSentenciadoAtivoPorFiltro"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:listarSentenciadoAtivoPorFiltroResponse">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.ListarSentenciadoAtivoPorFiltroResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:listarSentenciadoAtivoResponse">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.ListarSentenciadoAtivoResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:listarSentenciadoPorFiltro">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.ListarSentenciadoPorFiltro"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:listarSentenciadoPorFiltroResponse">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.ListarSentenciadoPorFiltroResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:listarSentenciadoPorSituacao">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.ListarSentenciadoPorSituacao"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:listarSentenciadoPorSituacaoResponse">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.ListarSentenciadoPorSituacaoResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:listarSentenciados">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.ListarSentenciados"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:listarSentenciadosResponse">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.ListarSentenciadosResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:obterIncidentesPorNumeroChaveProcesso">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.ObterIncidentesPorNumeroChaveProcesso"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:obterIncidentesPorNumeroChaveProcessoResponse">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.ObterIncidentesPorNumeroChaveProcessoResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:obterIncidentesPorNumeroUnicoProcesso">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.ObterIncidentesPorNumeroUnicoProcesso"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:obterIncidentesPorNumeroUnicoProcessoResponse">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.ObterIncidentesPorNumeroUnicoProcessoResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:obterListaAcaoCriminalPorNumeroChaveProcesso">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.ObterListaAcaoCriminalPorNumeroChaveProcesso"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:obterListaAcaoCriminalPorNumeroChaveProcessoResponse">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.ObterListaAcaoCriminalPorNumeroChaveProcessoResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:obterListaAcaoCriminalPorNumeroUnicoProcessoExecucao">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.ObterListaAcaoCriminalPorNumeroUnicoProcessoExecucao"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:obterListaAcaoCriminalPorNumeroUnicoProcessoExecucaoResponse">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.ObterListaAcaoCriminalPorNumeroUnicoProcessoExecucaoResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:obterRelatorioPorNumeroUnicoProccesso">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.ObterRelatorioPorNumeroUnicoProccesso"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:obterRelatorioPorNumeroUnicoProccessoResponse">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.ObterRelatorioPorNumeroUnicoProccessoResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:obterSentenciadoAtivoPorNumeroChaveProcesso">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.ObterSentenciadoAtivoPorNumeroChaveProcesso"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:obterSentenciadoAtivoPorNumeroChaveProcessoResponse">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.ObterSentenciadoAtivoPorNumeroChaveProcessoResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:obterSentenciadoAtivoPorNumeroFisicoProcesso">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.ObterSentenciadoAtivoPorNumeroFisicoProcesso"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:obterSentenciadoAtivoPorNumeroFisicoProcessoResponse">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.ObterSentenciadoAtivoPorNumeroFisicoProcessoResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:obterSentenciadoAtivoPorNumeroUnicoProcesso">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.ObterSentenciadoAtivoPorNumeroUnicoProcesso"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:obterSentenciadoAtivoPorNumeroUnicoProcessoResponse">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.ObterSentenciadoAtivoPorNumeroUnicoProcessoResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:obterSentenciadoPorNumeroUnicoAcaoCriminal">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.ObterSentenciadoPorNumeroUnicoAcaoCriminal"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:obterSentenciadoPorNumeroUnicoAcaoCriminalResponse">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.ObterSentenciadoPorNumeroUnicoAcaoCriminalResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:verificarDisponibilidadeWebService">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.VerificarDisponibilidadeWebService"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:verificarDisponibilidadeWebServiceResponse">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.VerificarDisponibilidadeWebServiceResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:processoExecucaoPenalNacionalSeeuWS">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.ProcessoExecucaoPenalNacionalSeeuWS"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:defensorAdvogadoNacionalSeeuWS">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.DefensorAdvogadoNacionalSeeuWS"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:acaoCriminalPenaNacionalSeeuWS">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.AcaoCriminalPenaNacionalSeeuWS"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:artigoCondenacaoNacionalSeeuWS">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.ArtigoCondenacaoNacionalSeeuWS"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:medidaAlternativaNacionalSeeuWS">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.MedidaAlternativaNacionalSeeuWS"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:sentenciadoSeeu">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.SentenciadoSeeu"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:advogadoParteSeeu">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.AdvogadoParteSeeu"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:acaoCriminalPenalSeeu">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.AcaoCriminalPenalSeeu"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:penaCriminalSeeu">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.PenaCriminalSeeu"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:desmembramentoPenaCriminalSeeu">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.DesmembramentoPenaCriminalSeeu"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:incidenteSeeu">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.IncidenteSeeu"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:acaoPenalSeeu">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.AcaoPenalSeeu"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:relatorioSeeu">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.RelatorioSeeu"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:filtroSentenciado">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.FiltroSentenciado"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:consultarStatusAvisosPendentes">
+      <class ref="br.jus.cnj.pje.criminal.seeu.extramni.ConsultarStatusAvisosPendentes"/>
+    </bindings>
+  </bindings>
+</bindings>

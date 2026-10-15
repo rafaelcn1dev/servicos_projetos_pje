@@ -1,0 +1,299 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:ns1="http://dominio.webservice.projudi.gov/"
+	name="DominioWebService"
+	targetNamespace="http://dominio.webservice.projudi.gov/">
+	<wsdl:types>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns:tns="http://dominio.webservice.projudi.gov/"
+			xmlns:ns1="http://dominio.seeu.pje.jus.br/"
+			elementFormDefault="unqualified"
+			targetNamespace="http://dominio.webservice.projudi.gov/"
+			version="1.0">
+			<xs:import namespace="http://dominio.seeu.pje.jus.br/" />
+			<xs:element
+				name="tipoDocumentoPorUsuarioEntregaManifestacao"
+				type="tns:tipoDocumentoPorUsuarioEntregaManifestacao" />
+			<xs:element
+				name="tipoDocumentoPorUsuarioEntregaManifestacaoResponse"
+				type="tns:tipoDocumentoPorUsuarioEntregaManifestacaoResponse" />
+			<xs:element
+				name="tipoMovimentoPorUsuarioEntregaManifestacao"
+				type="tns:tipoMovimentoPorUsuarioEntregaManifestacao" />
+			<xs:element
+				name="tipoMovimentoPorUsuarioEntregaManifestacaoResponse"
+				type="tns:tipoMovimentoPorUsuarioEntregaManifestacaoResponse" />
+			<xs:element name="todasAreaDeVara"
+				type="tns:todasAreaDeVara" />
+			<xs:element name="todasAreaDeVaraResponse"
+				type="tns:todasAreaDeVaraResponse" />
+			<xs:element name="todasComarcas" type="tns:todasComarcas" />
+			<xs:element name="todasComarcasResponse"
+				type="tns:todasComarcasResponse" />
+			<xs:element name="todasVaras" type="tns:todasVaras" />
+			<xs:element name="todasVarasResponse"
+				type="tns:todasVarasResponse" />
+			<xs:element name="todosTipoDocumento"
+				type="tns:todosTipoDocumento" />
+			<xs:element name="todosTipoDocumentoResponse"
+				type="tns:todosTipoDocumentoResponse" />
+			<xs:complexType
+				name="tipoDocumentoPorUsuarioEntregaManifestacao">
+				<xs:sequence>
+					<xs:element minOccurs="0" ref="ns1:sistemaTribunal" />
+					<xs:element minOccurs="0" ref="ns1:systemPass" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType
+				name="tipoDocumentoPorUsuarioEntregaManifestacaoResponse">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0"
+						name="return" type="tns:wsTipoDocumento" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="wsTipoDocumento">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="codigo" type="xs:int" />
+					<xs:element minOccurs="0" name="descricao"
+						type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="todasAreaDeVara">
+				<xs:sequence>
+					<xs:element minOccurs="0" ref="ns1:sistemaTribunal" />
+					<xs:element minOccurs="0" ref="ns1:systemPass" />
+					<xs:element minOccurs="0" ref="ns1:codigoTribunal" />
+					<xs:element minOccurs="0" ref="ns1:siglaTribunal" />
+					<xs:element minOccurs="0" ref="ns1:codigoComarca" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="todasAreaDeVaraResponse">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0"
+						name="return" type="tns:wsAreaDeVara" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="wsAreaDeVara">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="codigo" type="xs:int" />
+					<xs:element minOccurs="0" name="descricao"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="estado" type="xs:string" />
+					<xs:element minOccurs="0" name="codigoComarca"
+						type="xs:int" />
+					<xs:element minOccurs="0" name="tipoCompetencia"
+						type="tns:wsTipoCompetencia" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="wsTipoCompetencia">
+				<xs:sequence>
+					<xs:element name="codigo" type="xs:int" />
+					<xs:element minOccurs="0" name="descricao"
+						type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType
+				name="tipoMovimentoPorUsuarioEntregaManifestacao">
+				<xs:sequence>
+					<xs:element minOccurs="0" ref="ns1:sistemaTribunal" />
+					<xs:element minOccurs="0" ref="ns1:systemPass" />
+					<xs:element ref="ns1:tipoCompetencia" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType
+				name="tipoMovimentoPorUsuarioEntregaManifestacaoResponse">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0"
+						name="return" type="tns:wsTipoDocumento" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="todasComarcas">
+				<xs:sequence>
+					<xs:element minOccurs="0" ref="ns1:sistemaTribunal" />
+					<xs:element minOccurs="0" ref="ns1:systemPass" />
+					<xs:element minOccurs="0" ref="ns1:codigoTribunal" />
+					<xs:element minOccurs="0" ref="ns1:siglaTribunal" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="todasComarcasResponse">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0"
+						name="return" type="tns:wsComarca" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="wsComarca">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="id" type="xs:int" />
+					<xs:element minOccurs="0" name="descricao"
+						type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="todasVaras">
+				<xs:sequence>
+					<xs:element minOccurs="0" ref="ns1:sistemaTribunal" />
+					<xs:element minOccurs="0" ref="ns1:systemPass" />
+					<xs:element minOccurs="0" ref="ns1:codigoTribunal" />
+					<xs:element minOccurs="0" ref="ns1:siglaTribunal" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="todasVarasResponse">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0"
+						name="return" type="tns:wsVara" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="wsVara">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="codigo" type="xs:int" />
+					<xs:element minOccurs="0" name="descricao"
+						type="xs:string" />
+					<xs:element minOccurs="0" name="nomeOficio"
+						type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="todosTipoDocumento">
+				<xs:sequence>
+					<xs:element minOccurs="0" ref="ns1:sistemaTribunal" />
+					<xs:element minOccurs="0" ref="ns1:systemPass" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="todosTipoDocumentoResponse">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0"
+						name="return" type="tns:wsTipoDocumento" />
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			targetNamespace="http://dominio.seeu.pje.jus.br/" version="1.0">
+			<xs:element name="codigoComarca" type="xs:long" />
+			<xs:element name="codigoTribunal" type="xs:long" />
+			<xs:element name="siglaTribunal" type="xs:string" />
+			<xs:element name="sistemaTribunal" type="xs:string" />
+			<xs:element name="systemPass" type="xs:string" />
+			<xs:element name="tipoCompetencia" type="xs:int" />
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="todasComarcasResponse">
+		<wsdl:part element="ns1:todasComarcasResponse"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message
+		name="tipoDocumentoPorUsuarioEntregaManifestacaoResponse">
+		<wsdl:part
+			element="ns1:tipoDocumentoPorUsuarioEntregaManifestacaoResponse"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message
+		name="tipoDocumentoPorUsuarioEntregaManifestacao">
+		<wsdl:part
+			element="ns1:tipoDocumentoPorUsuarioEntregaManifestacao"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message
+		name="tipoMovimentoPorUsuarioEntregaManifestacaoResponse">
+		<wsdl:part
+			element="ns1:tipoMovimentoPorUsuarioEntregaManifestacaoResponse"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="todasAreaDeVara">
+		<wsdl:part element="ns1:todasAreaDeVara" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="todasAreaDeVaraResponse">
+		<wsdl:part element="ns1:todasAreaDeVaraResponse"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="todasVarasResponse">
+		<wsdl:part element="ns1:todasVarasResponse"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message
+		name="tipoMovimentoPorUsuarioEntregaManifestacao">
+		<wsdl:part
+			element="ns1:tipoMovimentoPorUsuarioEntregaManifestacao"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="todasComarcas">
+		<wsdl:part element="ns1:todasComarcas" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="todasVaras">
+		<wsdl:part element="ns1:todasVaras" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="todosTipoDocumento">
+		<wsdl:part element="ns1:todosTipoDocumento"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="todosTipoDocumentoResponse">
+		<wsdl:part element="ns1:todosTipoDocumentoResponse"
+			name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="DominioWebService">
+		<wsdl:operation
+			name="tipoDocumentoPorUsuarioEntregaManifestacao">
+			<wsdl:input
+				message="ns1:tipoDocumentoPorUsuarioEntregaManifestacao"
+				name="tipoDocumentoPorUsuarioEntregaManifestacao">
+			</wsdl:input>
+			<wsdl:output
+				message="ns1:tipoDocumentoPorUsuarioEntregaManifestacaoResponse"
+				name="tipoDocumentoPorUsuarioEntregaManifestacaoResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="todasAreaDeVara">
+			<wsdl:input message="ns1:todasAreaDeVara"
+				name="todasAreaDeVara">
+			</wsdl:input>
+			<wsdl:output message="ns1:todasAreaDeVaraResponse"
+				name="todasAreaDeVaraResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation
+			name="tipoMovimentoPorUsuarioEntregaManifestacao">
+			<wsdl:input
+				message="ns1:tipoMovimentoPorUsuarioEntregaManifestacao"
+				name="tipoMovimentoPorUsuarioEntregaManifestacao">
+			</wsdl:input>
+			<wsdl:output
+				message="ns1:tipoMovimentoPorUsuarioEntregaManifestacaoResponse"
+				name="tipoMovimentoPorUsuarioEntregaManifestacaoResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="todasComarcas">
+			<wsdl:input message="ns1:todasComarcas"
+				name="todasComarcas">
+			</wsdl:input>
+			<wsdl:output message="ns1:todasComarcasResponse"
+				name="todasComarcasResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="todasVaras">
+			<wsdl:input message="ns1:todasVaras" name="todasVaras">
+			</wsdl:input>
+			<wsdl:output message="ns1:todasVarasResponse"
+				name="todasVarasResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="todosTipoDocumento">
+			<wsdl:input message="ns1:todosTipoDocumento"
+				name="todosTipoDocumento">
+			</wsdl:input>
+			<wsdl:output message="ns1:todosTipoDocumentoResponse"
+				name="todosTipoDocumentoResponse">
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

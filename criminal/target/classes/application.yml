@@ -1,0 +1,99 @@
+server:
+  port: ${CRIMINAL_PORT:8480}
+
+spring:
+  application:
+    name: ${CRIMINAL_APP_NAME:criminal}
+  profiles:
+    active: ${GATEWAY_ACTIVE_PROFILES:prod}    
+  datasource:
+    platform: postgres
+    driver-class-name: org.postgresql.Driver
+    url: ${CRIMINAL_DB_URL:jdbc:postgresql://localhost:5432/criminal?stringtype=unspecified}
+    username: ${CRIMINAL_DB_USER:postgres}
+    password: ${CRIMINAL_DB_PASSWORD:P123456}
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+    properties:
+      hibernate:
+        default_schema: core
+        jdbc:
+          lob:
+            non_contextual_creation: true        
+      org:
+        hibernate:
+          envers:
+            default_schema: audit
+  flyway:
+    validate-on-migrate: ${FLYWAY_VALIDATE_ON_MIGRATE:false}
+    baseline-on-migrate: ${FLYWAY_BASELINE_ON_MIGRATE:true}
+  rabbitmq:
+    host: ${CRIMINAL_RABBITMQ_HOST:localhost}
+    username: ${CRIMINAL_RABBIT_USERNAME:criminal}
+    password: ${CRIMINAL_RABBIT_PASSWORD:criminal}
+    virtual-host: ${CRIMINAL_RABBIT_VHOST:/}
+    connection-timeout: ${CRIMINAL_RABBIT_CONNECTION_TIMEOUT:500}
+eureka:
+  instance:
+    prefer-ip-address: true
+    healthCheckUrlPath: /actuator/health
+    statusPageUrlPath: /actuator/info
+    hostname: ${HOSTNAME:localhost}
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVER_DEFAULT_ZONE:http://localhost:8761/eureka}
+    enabled: ${EUREKA_CLIENT_ENABLED:true}
+keycloak:
+  auth-server-url: ${SSO_AUTH_SERVER:http://localhost:8080/auth}
+  realm: ${SSO_REALM:pje}
+  resource: ${SSO_RESOURCE:criminal}
+  bearer-only: true
+  principal-attribute: preferred_username
+  use-resource-role-mappings: true
+
+assinador:
+  url: ${ASSINADOR_URL:https://assinador.pje.jus.br/assinador-a1/api/v1/assinar}
+  
+seeu:
+  wsdl: ${SEEU_WSDL:https://seeuintegra.pje.jus.br/seeu/IntercomunicacaoService?wsdl}
+  wsdlDominioWs: ${SEEU_WSDL_DOMINIO_WS:https://seeuintegra.pje.jus.br/seeu/ws/dominioWebServiceV1?wsdl}
+  wsdlExtraMni: ${SEEU_WSDL_EXTRA_MNI:https://seeuintegra.pje.jus.br/seeu/listaServicoSeeu?wsdl}
+  url: ${SEEU_URL:https://seeuintegra.pje.jus.br/seeu/ws/dominioWebServiceV1}
+
+criminal:
+  security:
+    bypass-enabled: ${IS_CRIMINAL_DESENVOLVIMENTO:false}
+  amqp:
+    queue: ${CRIMINAL_AMQP_QUEUE:pje.criminal}
+    exchange: ${CRIMINAL_AMQP_EXCHANGE:pje.exchange}
+    appnames-ignorados: ${CRIMINAL_AMQP_APPNAMES_IGNORADOS:}
+    routing-key:
+      processo-parte: ${CRIMINAL_AMQP_ROUTING_KEY_PROCESSO_PARTE:*.*.*.ProcessoParte.*}
+      processo-evento: ${CRIMINAL_AMQP_ROUTING_KEY_PROCESSO_EVENTO:*.*.*.ProcessoEvento.*}
+
+---
+spring:
+  profiles: prod
+management:
+  server:
+    port: ${CRIMINAL_MANAGEMENT_PORT:8480}
+  endpoints:
+    web:
+      exposure:
+        include:
+        - prometheus
+        - info
+        - health
+---
+spring:
+  profiles: dev
+management:
+  server:
+    port: ${CRIMINAL_MANAGEMENT_PORT:8480}
+  endpoints:
+    web.exposure.include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS

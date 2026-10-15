@@ -1,0 +1,42 @@
+version: "3"
+
+services:
+  discovery:
+    image: registry.cnj.jus.br/pje2/pje-discovery:latest
+    container_name: discovery
+    ports:
+      - '8761:8761'
+  #gateway:
+  #  image: registry.cnj.jus.br/pje2/pje-gateway:latest
+  #  container_name: gateway
+  #  ports:
+  #    - '8180:8180'
+  #    - '8181:8181'
+  #  environment:
+  #    - EUREKA_SERVER_DEFAULT_ZONE=http://discovery:8761/eureka/
+  #    - EUREKA_INSTANCE_PREFERIPADDRESS=true
+  #    - GATEWAY_ACTIVE_PROFILES=dev
+  #    - LOGGING_LEVEL_BR=debug
+  #    - EUREKA_INSTANCE_STATUSPAGEURL=http://localhost:8180/actuator/info
+  #    - EUREKA_INSTANCE_SECUREPORTENABLED=false
+  #    - EUREKA_INSTANCE_SECUREPORT=443
+  #    - EUREKA_INSTANCE_SECUREHEALTHCHECKURL=http://localhost:8180/actuator/health
+  #    - EUREKA_INSTANCE_NONSECUREPORTENABLED=true
+  #    - EUREKA_INSTANCE_NONSECUREPORT=8180
+  #    - EUREKA_INSTANCE_HOMEPAGEURL=http://localhost:8180/
+  #    - EUREKA_INSTANCE_HEALTHCHECKURL=http://localhost:8180/actuator/health
+  rabbitmq:
+    image: rabbitmq:3.7.9-management-alpine
+    container_name: rabbitmq
+    ports:
+      - '15672:15672'
+      - '5672:5672'
+    environment:
+      - RABBITMQ_DEFAULT_USER=pje
+      - RABBITMQ_DEFAULT_PASS=pje
+      - RABBITMQ_DEFAULT_VHOST=pje-dev
+  #frontend:
+  #  image: registry.cnj.jus.br/pje2/pje-frontend:1.0.18
+  #  container_name: pje-frontend
+  #  ports:
+  #    - '4200:80'
